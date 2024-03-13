@@ -1,18 +1,30 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow } = require('electron');
+const url = require('url');
+const path = require('path');
 
-const createWindow = () => {
-  const win = new BrowserWindow({
-    width: 800,
-    height: 600
-  })
 
-  win.loadFile('index.html')
+
+function createMainWindow() {
+    const mainWindow = new BrowserWindow({
+        title: 'My Tool App',
+        height: 1000,
+        width: 1000
+
+    });
+
+    mainWindow.loadFile('./home.html');
 }
+  
 
 app.whenReady().then(() => {
-  createWindow()
+    createMainWindow();
 
-  app.on('activate', () => {
-    if (BrowserWindow.getAllWindows().length === 0) createWindow()
-  })
+   
+});
+
+
+app.on('window-all-closed', () => {
+    if (process.platform !== 'win32') {
+        app.quit();
+    }
 })
