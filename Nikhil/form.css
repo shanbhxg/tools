@@ -1,0 +1,122 @@
+.header_nav {
+    background-image: linear-gradient(to right,#003b56,#7f8c98);
+}
+
+.headernav_inner_contents{
+    background-image: linear-gradient(to right, #348fa2, #1b8bd2);
+    margin: 1%;
+    padding: 5px;
+}
+
+.headernav_inner_contents2{
+    font-weight: bold;
+}
+
+.nav{
+    float:right;
+    font-size: 20px;
+}
+
+.p-4 {
+    padding: 19px;
+}
+
+.nav-link {
+    color: black
+}
+
+.nav-link:focus, .nav-link:hover {
+    color: #ffffff;
+}
+
+.appForm {
+    background-color: #255971;
+    box-shadow: 2px 2px 2px 2px  black;
+    margin: 100px;
+    border-radius: 5px;
+    margin-left: 10%;
+    margin-right: 10%;
+    box-sizing: border-box;
+    box-shadow: 1px 20px 25px  rgba(0, 0, 0, .6);
+    border-radius: 10px;
+
+}
+.main_body{
+    background-repeat: no-repeat;
+    background-size: cover;  
+    margin-bottom: 0px; 
+}
+
+label,option{
+    color: black;
+}
+
+.form-group {
+    margin: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+select,
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+.chkbx{
+    padding:3px;
+    margin: 3px;
+    border-radius: 5px;
+}
+
+.btn-outline-secondary {
+    --bs-btn-color: #f7fbff;
+    --bs-btn-border-color: #7ba3c7;
+}
+
+.btn_submit {
+    background-color: #3eaece;
+    color: #fff;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 45%;
+    margin-bottom: 30px;
+}
+
+.btn_submit:hover {
+    background-color: #0ab3ff;
+}
+
+.header {
+    text-align: center;
+    padding-left: 100px;
+}
+
+#full {
+    margin: 20px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+#left {
+    position: initial;
+    padding: 10px;
+}
+
+#right {
+    padding: 10px;
+}
