@@ -23,6 +23,7 @@
 
 #header {
     text-align: center;
+    background-color: #f0f0f0;
 }
 
 .nav-link {
@@ -42,9 +43,8 @@ html{
     font-family: 'Montserrat', sans-serif;
   }
 body {
-  
   background-image:  url("../assets/img/view_bg.jpg");
-  background-position-y: 110px;
+  background-position-y: 150px;
   background-size: contain;
 }
 .wrapper{
