@@ -9,11 +9,10 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/view.css">
-
+    <!-- <script src="scripts/view.js"></script> -->
     <title>Software Tool Management</title>
 </head>
 <body>
-    <!-- Navigation Bar -->
     <div class="header_nav p-4 bg-black/60 sm:min-w-[29rem] sm:min-h-[8rem]">
         <div class="headernav_inner_contents">
             <div class="dz-page-header-content-type-text dz-text">RTX Enterprise
@@ -39,7 +38,101 @@
             </div>
         </div>
     </div>
-    <h2> View Tools</h2>
-    
+    <h2> Tools </h2>
+    <div class="container">
+        <div id="team-list">
+          <ul>
+          </ul>
+        </div>
+      
+        <div id="tool-details">
+         </div>
+      </div>
+    <script>
+          // teams display
+          let x = "+";
+          function changeSign() {
+                if (x === "+") {
+                x = "-";
+                } else {
+                x = "+";
+                }
+            }
+          async function fetchTeamsData() {
+            try {
+              const response = await fetch('teamsData.json');
+              const data = await response.json();
+              return data;
+            } catch (error) {
+              console.error('Error fetching teams data:', error);
+              return [];
+            }
+          }
+          
+          async function displayTeams() {
+            const teamsData = await fetchTeamsData(); // gettting data from json file
+          
+            let teamList = document.getElementById("team-list").getElementsByTagName("ul")[0]; // getting ul element
+            teamList.innerHTML = ""; // clearing the ul element
+          
+            teamsData.forEach(team => { // looping through the data 
+              let teamItem = document.createElement("li"); // creating li element
+              teamItem.classList.add("team-item"); // adding class to the li element
+              teamItem.textContent = "\t"+ x + team.name; // adding team name text to the li element
+              teamItem.onclick = () => handleTeamSelection(team); // clicking on the team name will call handleTeamSelection function
+              teamList.appendChild(teamItem); // appending the li element to the ul element
+            });
+          }
+          
+          function displayTools(team) {
+            let softwareToolsList = document.createElement("ul"); // creating ul element under the selected team
+            softwareToolsList.classList.add("software-tools-list"); // adding class to the ul element
+            team.softwareTools.forEach(tool => { // looping through the tools of the selected team
+              let toolItem = document.createElement("li"); // creating li element
+              toolItem.classList.add("tool-item"); 
+              toolItem.textContent = tool.name;
+              toolItem.onclick = () => displayToolDetails(tool);
+              softwareToolsList.appendChild(toolItem);
+            });
+            
+            let teamList = document.getElementById("team-list").getElementsByTagName("ul")[0];
+            let selectedTeamItem = teamList.querySelector('.selected');
+            
+            let nextSibling = selectedTeamItem.nextSibling;
+            
+            if (nextSibling && nextSibling.classList.contains('software-tools-list')) {
+              selectedTeamItem.parentNode.removeChild(nextSibling);
+            } else {
+              teamList.insertBefore(softwareToolsList, selectedTeamItem.nextSibling);
+            }
+          }
+          
+          function displayToolDetails(tool) {
+            let toolDetails = document.getElementById("tool-details");
+            toolDetails.innerHTML = ""; 
+          
+            let toolFields = tool.fields;
+            Object.keys(toolFields).forEach(fieldName => {
+              let fieldItem = document.createElement("div");
+              fieldItem.classList.add("field-item");
+              if (toolFields[fieldName]) {
+                fieldItem.innerHTML = `<strong>${fieldName}:</strong> ${toolFields[fieldName]}`;
+              }
+              toolDetails.appendChild(fieldItem);
+            });
+          }
+          
+          function handleTeamSelection(team) {
+            let allTeamItems = document.querySelectorAll(".team-item");
+            allTeamItems.forEach(item => item.classList.remove("selected"));
+            let clickedTeamItem = event.target;
+            clickedTeamItem.classList.add("selected");
+            changeSign();
+            displayTools(team);
+          }
+          
+          displayTeams();
+          
+    </script>
 </body>
 </html>

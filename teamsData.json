@@ -1,0 +1,149 @@
+[
+    {
+      "id": 1,
+      "name": "Data Science and Analytics",
+      "softwareTools": [
+        {
+          "name": "Github - RTX",
+          "fields": {
+            "Name": "Github - RTX",
+            "Team": "ASE",
+            "Domain": "Data Science and Analytics",
+            "Need Date": "Feb 23",
+            "Application": "Application Development, Data Science Projects",
+            "Purpose": "Store all source codes",
+            "Version": "RTX Github Available for PW India",
+            "S/W Type": "Commercial",
+            "Installation": "eVDI and MWS",
+            "License": "Global IEC Access",
+            "Comments": ""
+          }
+        },
+        {
+          "name": "Power-BI Pro Version",
+          "fields": {
+            "Name": "Power-BI Pro Version",
+            "Team": "ASE",
+            "Domain": "Data Science and Analytics",
+            "Need Date": "Feb 23",
+            "Application": "Data Visualization",
+            "Purpose": "Dashboard building system",
+            "Version": "Desktop O365",
+            "S/W Type": "Commercial",
+            "Installation": "eVDI and MWS",
+            "License": "Global IEC Access",
+            "Comments": ""
+          }          
+        },
+        {
+          "name": "Qlik - International",         
+          "fields": {
+            "Name": "Qlik - International",
+            "Team": "ESTO",
+            "Domain": "Data Science and Analytics",
+            "Need Date": "Feb 23",
+            "Application": "Data Science",
+            "Purpose": "Dashboard building systems.",
+            "Version": "",
+            "S/W Type": "Commercial",
+            "Installation": "eVDI and MWS",
+            "License": "Global IEC Access",
+            "Comments": "Qlik International access for 'Consumer' role enabled"
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Structural Design",
+      "softwareTools": [
+        {
+          "name": "ANSYS",         
+          "fields": {
+            "Name": "ANSYS",
+            "Team": "ASE, CSE",
+            "Domain": "Data Science and Analytics",
+            "Need Date": "Feb 23",
+            "Application": "Data Science",
+            "Purpose": "Dashboard building systems.",
+            "Version": "",
+            "S/W Type": "Commercial",
+            "Installation": "eVDI and MWS",
+            "License": "Global IEC Access",
+            "Comments": "Qlik International access for 'Consumer' role enabled"
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Aero-Thermal",
+      "softwareTools": [
+        {
+          "name": "ANSYS - Fluent, CFX, fensap (Icing CFD)",         
+          "fields": {
+            "Name": "ANSYS - Fluent, CFX, fensap (Icing CFD)",
+            "Team": "EDSI - CORE",
+            "Domain": "Aero-Thermal",
+            "Need Date": "Feb 23",
+            "Application": "Aero-Thermal",
+            "Purpose": "Dashboard building systems.",
+            "Version": "",
+            "S/W Type": "Commercial",
+            "Installation": "eVDI and MWS",
+            "License": "Global IEC Access",
+            "Comments": "Qlik International access for 'Consumer' role enabled"
+          }
+        },
+        {
+          "name": "Space Claim",         
+          "fields": {
+            "Name": "Space Claim",
+            "Team": "EDSI - CORE",
+            "Domain": "Aero-Thermal",
+            "Need Date": "Feb 23",
+            "Application": "",
+            "Purpose": "Pre-processing tool",
+            "Version": "",
+            "S/W Type": "Commercial",
+            "Installation": "MWS",
+            "License": "Global IEC Access",
+            "Comments": ""
+          }
+        },
+        {
+          "name": "ANSYS - Discovery",         
+          "fields": {
+            "Name": "ANSYS - Discovery",
+            "Team": "EDSI - CORE",
+            "Domain": "Aero-Thermal",
+            "Need Date": "Feb 23",
+            "Application": "New CFD Solver, GPU enabled solver for quick solutions",
+            "Purpose": "Pre-processing & Rapid concepts evaluation",
+            "Version": "",
+            "S/W Type": "Commercial",
+            "Installation": "MWS",
+            "License": "Global IEC Access",
+            "Comments": ""
+          }
+        },
+        {
+          "name": "CFD Post",         
+          "fields": {
+            "Name": "CFD Post",
+            "Team": "EDSI - CORE",
+            "Domain": "Aero-Thermal",
+            "Need Date": "Feb 23",
+            "Application": "",
+            "Purpose": "",
+            "Version": "",
+            "S/W Type": "Commercial",
+            "Installation": "MWS",
+            "License": "Global IEC Access",
+            "Comments": ""
+          }
+        }
+      ]
+    }
+  ]
+  
