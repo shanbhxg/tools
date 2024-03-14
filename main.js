@@ -6,10 +6,16 @@ const path = require('path');
 
 function createMainWindow() {
     const mainWindow = new BrowserWindow({
+        
         title: 'My Tool App',
         height: 1000,
-        width: 1000
-
+        width: 1000,
+        nodeIntegration: true,
+        contextIsolation: false,
+        webPreferences: {
+        nodeIntegration: true,
+        contextIsolation: false,
+    }
     });
 
     mainWindow.loadFile('./home.html');
