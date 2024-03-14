@@ -17,7 +17,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/view.css">
-    <!-- <script src="scripts/view.js"></script> -->
+    <script src="scripts/search.js"></script>
     <title>Software Tool Management</title>
 </head>
 <body>
@@ -34,10 +34,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="view.html">View</a>
                     </li>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-secondary" type="submit">Search</button>
-                    </form>
+                        <li><input onkeypress="search()" onclick="showAll()" class="form-control me-2" id="search" placeholder="Search for tools..." aria-label="Search"></li>
                 </ul>
 
             </div>
@@ -59,6 +56,12 @@
       </div>
       </div>
     <script>
+
+          function showAll() {
+            let all = document.querySelectorAll(".team-item");
+            all.forEach(item => item.click());
+          }
+
           // teams display
           
           async function fetchTeamsData() {
@@ -138,6 +141,22 @@
             displayTools(team);
           }
           
+          function search() {
+            // read json file and match search query with "softwareTools" name
+            let searchQuery = document.getElementById("search").value;
+            let teamList = document.getElementById("team-list").getElementsByTagName("ul")[0];
+            let softwareToolsList = teamList.getElementsByClassName("software-tools-list");
+            let toolItems = teamList.getElementsByClassName("tool-item");
+            
+            for (let i = 0; i < toolItems.length; i++) {
+              let toolName = toolItems[i].textContent;
+              if (toolName.toLowerCase().includes(searchQuery.toLowerCase())) {
+                toolItems[i].style.display = "block";
+              } else {
+                toolItems[i].style.display = "none";
+              }
+            }
+          }
           displayTeams();
           
     </script>
