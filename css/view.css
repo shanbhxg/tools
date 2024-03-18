@@ -102,7 +102,7 @@ body {
 }
 
 .team-item.selected {
-  background-color: #f0f0f0;
+  background-color: #4a8cf08e;
 }
 
 .software-tools-list {
@@ -126,6 +126,14 @@ body {
   padding: 20px;
   box-sizing: border-box;
   border-radius: 40px;
+}
+
+#tool-details:empty {
+  display: none;
+}
+
+.toggle-icon{
+  float:right;
 }
 
 .field-item {

@@ -61,11 +61,15 @@
     font-family: 'Montserrat', sans-serif;
   }
   
+  body{
+    background-position-y: 140px;
+    background-repeat: no-repeat;
+    background-image:  url("../assets/img/form_bg.jpg");
+  }
  
   
   .hero-section{
     align-items: flex-start;
-    background-image:  url("../assets/img/form_bg.jpg");
     background-repeat: no-repeat;
     
     display: flex;

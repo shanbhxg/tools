@@ -1,0 +1,51 @@
+async function deleteTools(){ // create delete 'X' next to each tool
+            displayAll();
+            let toolItems = document.querySelectorAll(".tool-item");
+            
+            toolItems.forEach(item => {
+              let deleteButton = document.createElement("button");
+              deleteButton.textContent = "X";
+              deleteButton.classList.add("delete-button");
+              deleteButton.onclick = () => deleteTool(item);
+              item.appendChild(deleteButton);
+            });
+          }
+
+          function deleteTool(item){
+            // remove item from json file
+            let toolName = item.textContent;
+            let teamList = document.getElementById("team-list").getElementsByTagName("ul")[0];
+            let teamItems = teamList.getElementsByClassName("team-item");
+
+            for (let i = 0; i < teamItems.length; i++) {
+              let team = teamItems[i].textContent;
+              let softwareToolsList = teamList.getElementsByClassName("software-tools-list")[i];
+              let toolItems = softwareToolsList.getElementsByClassName("tool-item");
+              for (let j = 0; j < toolItems.length; j++) {
+                if (toolItems[j].textContent === toolName) {
+                  toolItems[j].remove();
+                }
+              }
+            }
+          }
+
+team.softwareTools.forEach(tool => { 
+              let toolItem = document.createElement("li"); 
+              toolItem.classList.add("tool-item"); 
+              toolItem.textContent = tool.name;
+              toolItem.onclick = () => {
+                if (toolItem.classList.contains("selected")) {
+                  toolItem.classList.remove("selected");
+                  toolsDetails.innerHTML = '';
+                } else {
+                  let selectedToolItem = softwareToolsList.querySelector('.selected');
+                  if (selectedToolItem) {
+                    selectedToolItem.classList.remove("selected");
+                  }
+                  toolItem.classList.add("selected");
+                  displayToolDetails(tool);
+                }
+              };
+              softwareToolsList.appendChild(toolItem);
+
+            });
