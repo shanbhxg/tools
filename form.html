@@ -334,7 +334,7 @@
                 }
             };
 
-            const filePath = path.join("C:\\Users\\F337751\\Desktop", 'data.json');
+            const filePath = path.join(__dirname, 'data.json');
 
             fs.readFile(filePath, 'utf-8', (err, fileData) => {
                 if (err) {
