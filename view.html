@@ -26,16 +26,16 @@
         <div class="dz-page-header-content-type-text dz-text">RTX Enterprise
             <ul class="nav justify-content-end">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+                    <a class="nav-link" href="home.html">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="form.html">Add</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="view.html">View</a>
+                    <a class="nav-link active" aria-current="page" href="view.html">View</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="login.html">Logout</a>
+                    <a class="nav-link" href="login.html">Logout</a>
                 </li>
             </ul>
 
@@ -52,13 +52,13 @@
         <div class="card-body"> 
             <div class="drop-down d-flex">
                     <select aria-label="content type dropdown" name="searchType" class="me-2 ng-pristine ng-valid ng-touched" onchange="display()">
-                        <option value="" disabled selected hidden>View...</option>
+                        <option value="" disabled selected hidden>Select</option>
                         <option value="all">All</option> 
                         <option value="tools">Tools</option>
                         <option value="domains">Domains</option>
                     </select>
                 
-                <input onkeypress="search()" onclick="showAll()" class="form-control me-2" id="search" placeholder="Search for tools..." aria-label="Search">
+                <input onkeypress="search()" onclick="displayAll()" class="form-control me-2" id="search" placeholder="Search for tools..." aria-label="Search">
             </div>
         </div>  
         </div>
@@ -72,7 +72,11 @@
       </div>
       </div>
     <script>
-          //  displayAll()
+          function displayAll(){
+            if (document.querySelector('select').value === '') {
+            let teams = document.querySelectorAll(".team-item");
+            teams.forEach(item => item.click());}
+          }
           function display(){
             let allTeamItems = document.querySelectorAll(".team-item");
             let allToolItems = document.querySelectorAll(".tool-item");
@@ -99,7 +103,7 @@
             else if (document.querySelector('select').value === 'domains') {
               allTeamItems.forEach(item => item.style.display = "block");
               allToolItems.forEach(item => item.style.display = "none");
-            } 
+            }
           }
           // teams display
           async function fetchTeamsData() {
@@ -194,6 +198,19 @@
             let softwareToolsList = teamList.getElementsByClassName("software-tools-list");
             let toolItems = teamList.getElementsByClassName("tool-item");
             
+            if (document.querySelector('select').value === 'domains') {
+              // only show those team-items that match the search query
+              let teamItems = teamList.getElementsByClassName("team-item");
+              for (let i = 0; i < teamItems.length; i++) {
+                let teamName = teamItems[i].textContent;
+                if (teamName.toLowerCase().includes(searchQuery.toLowerCase())) {
+                  teamItems[i].style.display = "block";
+                } else {
+                  teamItems[i].style.display = "none";
+                }
+              }
+            } 
+            else {            
             for (let i = 0; i < toolItems.length; i++) {
               let toolName = toolItems[i].textContent;
               if (toolName.toLowerCase().includes(searchQuery.toLowerCase())) {
@@ -202,6 +219,7 @@
                 toolItems[i].style.display = "none";
               }
             }
+          }
           }
           displayTeams();
           
