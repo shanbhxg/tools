@@ -1,6 +1,6 @@
 [
     {
-      "name": "Data Science and Analytics",
+      "name": " Data Science and Analytics",
       "softwareTools": [
         {
           "name": "Github - RTX",
@@ -53,7 +53,7 @@
       ]
     },
     {
-      "name": "Structural Design",
+      "name": " Structural Design",
       "softwareTools": [
         {
           "name": "ANSYS",         
@@ -74,7 +74,7 @@
       ]
     },
     {
-      "name": "Aero-Thermal",
+      "name": " Aero-Thermal",
       "softwareTools": [
         {
           "name": "ANSYS - Fluent, CFX, fensap (Icing CFD)",         
@@ -143,7 +143,7 @@
       ]
     },
     {
-      "name": "Fleet Analytics",
+      "name": " Fleet Analytics",
       "softwareTools": [
         {
           "name": "PW-Hawkeye",         
@@ -164,7 +164,7 @@
       ]
     },
     {
-      "name": "Methods Development",
+      "name": " Methods Development",
       "softwareTools": [
         {
           "name": "UG - NX Compiler and Visual Studio Coupling",         
@@ -185,16 +185,16 @@
       ]
     },
     {
-      "name": "Performance"
+      "name": " Performance"
     },
     {
-      "name": "Systems Design"
+      "name": " Systems Design"
     },
     {
-      "name": "Systems Engineering"
+      "name": " Systems Engineering"
     },
     {
-      "name": "Web Development",
+      "name": " Web Development",
       "softwareTools": [
         {
           "name": "Postman",         
@@ -215,7 +215,7 @@
       ]
     },
     {
-      "name": "Web Applications"
+      "name": " Web Applications"
     }
   ]
   
