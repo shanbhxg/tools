@@ -47,7 +47,7 @@
 </div>
     <h2 id="header"> Tools </h2>
     <div class="wrapper">
-    <div class="container">
+    <div class="container full">
       <div class="card">        
         <div class="card-body"> 
             <div class="drop-down d-flex">
@@ -57,11 +57,10 @@
                         <option value="tools">Tools</option>
                         <option value="domains">Domains</option>
                     </select>
-                
-                <input onkeypress="search()" onclick="displayAll()" class="form-control me-2" id="search" placeholder="Search for tools..." aria-label="Search">
-            </div>
+                    <input onkeypress="search()" onclick="displayAll()" class="form-control me-2" id="search" placeholder="Search for tools..." aria-label="Search">
+            <button class="btn" id="del" onclick="deleteTools()">Remove</button>
         </div>  
-        </div>
+        </div></div>
         <div id="team-list">
           <ul>
           </ul>
@@ -72,11 +71,13 @@
       </div>
       </div>
     <script>
+
           function displayAll(){
             if (document.querySelector('select').value === '') {
             let teams = document.querySelectorAll(".team-item");
             teams.forEach(item => item.click());}
           }
+
           function display(){
             let allTeamItems = document.querySelectorAll(".team-item");
             let allToolItems = document.querySelectorAll(".tool-item");
@@ -105,7 +106,7 @@
               allToolItems.forEach(item => item.style.display = "none");
             }
           }
-          // teams display
+
           async function fetchTeamsData() {
             try {
               const response = await fetch('data.json');
@@ -117,6 +118,48 @@
             }
           }
           
+          async function deleteTools(){ // create delete 'X' next to each tool
+            displayAll();
+            let toolItems = document.querySelectorAll(".tool-item");
+            let remButton = document.getElementById("del");
+            if(remButton.innerHTML == 'Remove'){
+              remButton.innerHTML = 'Cancel';
+              toolItems.forEach(item => {
+                let deleteButton = document.createElement("button");
+                deleteButton.textContent = "X";
+                deleteButton.classList.add("delete-button");
+                deleteButton.onclick = () => deleteTool(item);
+                item.appendChild(deleteButton);
+              });
+            }
+            else{
+              remButton.innerHTML = 'Remove';
+              toolItems.forEach(item => {
+                let deleteButton = item.getElementsByClassName("delete-button")[0];
+                deleteButton.remove();
+              });
+            }
+          }
+
+          function deleteTool(item){
+            // remove item from json file
+            let toolName = item.textContent;
+            let toolDetails = document.getElementById("tool-details");
+            let teamList = document.getElementById("team-list").getElementsByTagName("ul")[0];
+            let teamItems = teamList.getElementsByClassName("team-item");
+           
+            for (let i = 0; i < teamItems.length; i++) {
+              let team = teamItems[i].textContent;
+              let softwareToolsList = teamList.getElementsByClassName("software-tools-list")[i];
+              let toolItems = softwareToolsList.getElementsByClassName("tool-item");
+              for (let j = 0; j < toolItems.length; j++) {
+                if (toolItems[j].textContent === toolName) {
+                  toolItems[j].remove();
+                }
+              }
+            }
+          }
+
           async function displayTeams() {
             const teamsData = await fetchTeamsData(); // gettting data from json file
           
@@ -160,8 +203,8 @@
           
           function displayToolDetails(tool) {
             let toolDetails = document.getElementById("tool-details");
-            // toggle tool details such that if the tool is clicked, the details are displayed and clicked again, it is hidden
             toolDetails.innerHTML = ""; 
+            
             if (toolDetails.style.display === "block") {
               toolDetails.style.display = "none";
             } else {

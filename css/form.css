@@ -11,7 +11,11 @@
 .headernav_inner_contents2{
     font-weight: bold;
 }
-
+body {
+    background-image:  url("../assets/img/view_bg.jpg");
+    background-position-y: 150px;
+    background-size: contain;
+  }
 
 .nav{
     float:right;

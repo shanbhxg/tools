@@ -45,7 +45,7 @@ html{
 body {
   background-image:  url("../assets/img/view_bg.jpg");
   background-position-y: 150px;
-  background-size: contain;
+  background-repeat: no-repeat;
 }
 .wrapper{
     align-items: flex-start;
@@ -159,4 +159,17 @@ select:focus {
   border-color: #86b7fe;
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(13,110,253,.25);
+}
+
+.delete-button {
+  float: right;
+  background-color: #ff00006c;
+}
+
+
+.full {
+  margin: 20px;
+  background-color: #ffffff9c;
+  padding: 3%;
+  border-radius: 10px;
 }
