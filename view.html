@@ -35,6 +35,9 @@
                         <a class="nav-link" href="view.html">View</a>
                     </li>
                         <li><input onkeypress="search()" onclick="showAll()" class="form-control me-2" id="search" placeholder="Search for tools..." aria-label="Search"></li>
+                    <li>
+                      <a class="nav-link" href="search.html"> Advanced Search</a>
+                    </li>
                 </ul>
 
             </div>
@@ -62,11 +65,12 @@
             all.forEach(item => item.click());
           }
 
+
           // teams display
           
           async function fetchTeamsData() {
             try {
-              const response = await fetch('teamsData.json');
+              const response = await fetch('data.json');
               const data = await response.json();
               return data;
             } catch (error) {
@@ -79,14 +83,15 @@
             const teamsData = await fetchTeamsData(); // gettting data from json file
           
             let teamList = document.getElementById("team-list").getElementsByTagName("ul")[0]; // getting ul element
-            teamList.innerHTML = ""; // clearing the ul element
-          
-            teamsData.forEach(team => { // looping through the data 
-              let teamItem = document.createElement("li"); // creating li element
-              teamItem.classList.add("team-item"); // adding class to the li element
-              teamItem.textContent = "\t"+ team.name; 
-              teamItem.onclick = () => handleTeamSelection(team); 
-              teamList.appendChild(teamItem); 
+            teamList.innerHTML = ""; 
+
+            teamsData.forEach(team => {
+                let teamItem = document.createElement("li");
+                teamItem.classList.add("team-item");
+                teamItem.textContent = team.name; 
+                teamItem.onclick = () => handleTeamSelection(team); 
+                teamList.appendChild(teamItem);
+              
             });
           }
           
