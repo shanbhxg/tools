@@ -1,20 +1,20 @@
 [
     {
-      "name": " Data Science and Analytics",
+      "name": " Data-Science and Analytics",
       "softwareTools": [
         {
           "name": "Github - RTX",
           "fields": {
             "Name": "Github - RTX",
-            "Team": "ASE",
-            "Domain": "Data Science and Analytics",
-            "Need Date": "Feb 23",
+            "Team": " ASE",
+            "Domain": " Data-Science and Analytics",
+            "Need Date": "0312-02-13",
             "Application": "Application Development, Data Science Projects",
             "Purpose": "Store all source codes",
             "Version": "RTX Github Available for PW India",
             "S/W Type": "Commercial",
-            "Installation": "eVDI and MWS",
-            "License": "Global IEC Access",
+            "Installation": " eVDI MWS",
+            "License": " Global IEC Access",
             "Comments": ""
           }
         },
@@ -22,14 +22,14 @@
           "name": "Power-BI Pro Version",
           "fields": {
             "Name": "Power-BI Pro Version",
-            "Team": "ASE",
-            "Domain": "Data Science and Analytics",
-            "Need Date": "Feb 23",
+            "Team": " ASE",
+            "Domain": " Data-Science and Analytics",
+            "Need Date": "0312-02-13",
             "Application": "Data Visualization",
             "Purpose": "Dashboard building system",
             "Version": "Desktop O365",
             "S/W Type": "Commercial",
-            "Installation": "eVDI and MWS",
+            "Installation": " eVDI MWS",
             "License": "Global IEC Access",
             "Comments": ""
           }          
@@ -38,15 +38,15 @@
           "name": "Qlik - International",         
           "fields": {
             "Name": "Qlik - International",
-            "Team": "ESTO",
-            "Domain": "Data Science and Analytics",
-            "Need Date": "Feb 23",
+            "Team": " ESTO",
+            "Domain": " Data-Science and Analytics",
+            "Need Date": "0312-02-13",
             "Application": "Data Science",
             "Purpose": "Dashboard building systems.",
             "Version": "",
             "S/W Type": "Commercial",
-            "Installation": "eVDI and MWS",
-            "License": "Global IEC Access",
+            "Installation": " eVDI MWS",
+            "License": " Global IEC Access",
             "Comments": "Qlik International access for 'Consumer' role enabled"
           }
         }
@@ -59,15 +59,15 @@
           "name": "ANSYS",         
           "fields": {
             "Name": "ANSYS",
-            "Team": "ASE, CSE",
-            "Domain": "Data Science and Analytics",
-            "Need Date": "Feb 23",
+            "Team": " ASE,CSE",
+            "Domain": " Structural Design",
+            "Need Date": "0312-02-13",
             "Application": "Data Science",
             "Purpose": "Dashboard building systems.",
             "Version": "",
             "S/W Type": "Commercial",
-            "Installation": "eVDI and MWS",
-            "License": "Global IEC Access",
+            "Installation": " eVDI MWS",
+            "License": " Global IEC Access",
             "Comments": "Qlik International access for 'Consumer' role enabled"
           }
         }
@@ -80,15 +80,15 @@
           "name": "ANSYS - Fluent, CFX, fensap (Icing CFD)",         
           "fields": {
             "Name": "ANSYS - Fluent, CFX, fensap (Icing CFD)",
-            "Team": "EDSI - CORE",
-            "Domain": "Aero-Thermal",
-            "Need Date": "Feb 23",
+            "Team": " EDSI-CORE",
+            "Domain": " Aero-Thermal",
+            "Need Date": "0312-02-13",
             "Application": "Aero-Thermal",
             "Purpose": "Dashboard building systems.",
             "Version": "",
             "S/W Type": "Commercial",
-            "Installation": "eVDI and MWS",
-            "License": "Global IEC Access",
+            "Installation": " eVDI MWS",
+            "License": " Global IEC Access",
             "Comments": "Qlik International access for 'Consumer' role enabled"
           }
         },
@@ -96,15 +96,15 @@
           "name": "Space Claim",         
           "fields": {
             "Name": "Space Claim",
-            "Team": "EDSI - CORE",
-            "Domain": "Aero-Thermal",
-            "Need Date": "Feb 23",
+            "Team": " EDSI-CORE",
+            "Domain": " Aero-Thermal",
+            "Need Date": "0312-02-13",
             "Application": "",
             "Purpose": "Pre-processing tool",
             "Version": "",
             "S/W Type": "Commercial",
-            "Installation": "MWS",
-            "License": "Global IEC Access",
+            "Installation": " MWS",
+            "License": " Global IEC Access",
             "Comments": ""
           }
         },
@@ -112,31 +112,31 @@
           "name": "ANSYS - Discovery",         
           "fields": {
             "Name": "ANSYS - Discovery",
-            "Team": "EDSI - CORE",
-            "Domain": "Aero-Thermal",
-            "Need Date": "Feb 23",
+            "Team": " EDSI-CORE",
+            "Domain": " Aero-Thermal",
+            "Need Date": "0312-02-13",
             "Application": "New CFD Solver, GPU enabled solver for quick solutions",
             "Purpose": "Pre-processing & Rapid concepts evaluation",
             "Version": "",
             "S/W Type": "Commercial",
-            "Installation": "MWS",
-            "License": "Global IEC Access",
+            "Installation": " MWS",
+            "License": " Global IEC Access",
             "Comments": ""
           }
         },
         {
-          "name": "CFD Post",         
+          "name": " CFD Post",         
           "fields": {
             "Name": "CFD Post",
-            "Team": "EDSI - CORE",
-            "Domain": "Aero-Thermal",
-            "Need Date": "Feb 23",
+            "Team": " EDSI-CORE",
+            "Domain": " Aero-Thermal",
+            "Need Date": "0312-02-13",
             "Application": "",
             "Purpose": "",
             "Version": "",
             "S/W Type": "Commercial",
-            "Installation": "MWS",
-            "License": "Global IEC Access",
+            "Installation": " MWS",
+            "License": " Global IEC Access",
             "Comments": ""
           }
         }
@@ -149,15 +149,15 @@
           "name": "PW-Hawkeye",         
           "fields": {
           "Name": "PW-Hawkeye",
-          "Team": "EDSI - CE",
-          "Domain": "Fleet Analytics",
+          "Team": " EDSI-CE",
+          "Domain": " Fleet Analytics",
           "Need Date": "02-11-23",
           "Purpose": "Need access to Hawkeye to get access to DPHM data (engine health monitoring sensors) and SAP (QN database for ESTP ).",
           "Application": "The PW Hawkeye Platform will help the Enterprise to better understand, define, and access data. The Platform consist of an Enterprise Data Warehouse (Azure), Enterprise Data Catalog & Governance.  The Enterprise data warehouse consist of data from a number of transactional data systems such as SAP, Teamcenter, Solumina, and much more. confluence page: https://confluence.utc.com/display/NEDMP/PW+Hawkeye",
           "Version": "",
           "S/W Type": "PW - Internal",
-          "Installation": "",
-          "License": "IEC Access",
+          "Installation": " eVDI",
+          "License": " IEC Access",
           "Comments": "Right now Non-US persons (Ex-cept few MRO shops) are not given access to Hawkeye dataplatform.  There are lot of GT restrictions as Hawkeye has tech data and each database/tables needs to be classified before access is granted to IEC. ICC team is already working with US Hawkeye team on getting access. Following are the contacts which might help to move this forward. 1 Hawkeye team-- Lead Chris (christopher.kraenzle@prattwhitney.com),  Tech team - (rafal.bielech@prattwhitney.com and jeffrey.kaye@prattwhitney.com) 2. ICC team--Dillon, John T PW <john.dillon@prattwhitney.com> 3. GT focal with whom ICC is working-- Moor, James J PW <James.Moor@prattwhitney.com>"
         }
       }
@@ -170,28 +170,31 @@
           "name": "UG - NX Compiler and Visual Studio Coupling",         
           "fields": {
           "Name": "UG - NX Compiler and Visual Studio Coupling",
-          "Team": "MSEN",
-          "Domain": "Methods Development",
+          "Team": " MSEN",
+          "Domain": " Methods Development",
           "Need Date": "",
           "Purpose": "NX Open Coding for methods development",
           "Application": "",
           "Version": "",
           "S/W Type": "Commercial",
-          "Installation": "eVDI",
-          "License": "IEC Access",
+          "Installation": " eVDI",
+          "License": " IEC Access",
           "Comments": "Right now Non-US persons (Ex-cept few MRO shops) are not given access to Hawkeye dataplatform.  There are lot of GT restrictions as Hawkeye has tech data and each database/tables needs to be classified before access is granted to IEC. ICC team is already working with US Hawkeye team on getting access. Following are the contacts which might help to move this forward. 1 Hawkeye team-- Lead Chris (christopher.kraenzle@prattwhitney.com),  Tech team - (rafal.bielech@prattwhitney.com and jeffrey.kaye@prattwhitney.com) 2. ICC team--Dillon, John T PW <john.dillon@prattwhitney.com> 3. GT focal with whom ICC is working-- Moor, James J PW <James.Moor@prattwhitney.com>"
         }
       }
       ]
     },
     {
-      "name": " Performance"
+      "name": " Performance",
+      "softwareTools": []
     },
     {
-      "name": " Systems Design"
+      "name": " Systems Design",
+      "softwareTools": []
     },
     {
-      "name": " Systems Engineering"
+      "name": " Systems Engineering",
+      "softwareTools": []
     },
     {
       "name": " Web Development",
@@ -200,22 +203,19 @@
           "name": "Postman",         
           "fields": {
           "Name": "Postman",
-          "Team": "ASE",
-          "Domain": "Web Development",
+          "Team": " ASE",
+          "Domain": " Web Development",
           "Need Date": "",
-          "Purpose": "NX Open Coding for methods development",
+          "Purpose": " NX Open Coding for methods development",
           "Application": "",
           "Version": "",
-          "S/W Type": "Commercial",
-          "Installation": "eVDI",
-          "License": "IEC Access",
-          "Comments": "Right now Non-US persons (Ex-cept few MRO shops) are not given access to Hawkeye dataplatform.  There are lot of GT restrictions as Hawkeye has tech data and each database/tables needs to be classified before access is granted to IEC. ICC team is already working with US Hawkeye team on getting access. Following are the contacts which might help to move this forward. 1 Hawkeye team-- Lead Chris (christopher.kraenzle@prattwhitney.com),  Tech team - (rafal.bielech@prattwhitney.com and jeffrey.kaye@prattwhitney.com) 2. ICC team--Dillon, John T PW <john.dillon@prattwhitney.com> 3. GT focal with whom ICC is working-- Moor, James J PW <James.Moor@prattwhitney.com>"
+          "S/W Type": " Commercial",
+          "Installation": " eVDI",
+          "License": " IEC Access",
+          "Comments": " Right now Non-US persons (Ex-cept few MRO shops) are not given access to Hawkeye dataplatform.  There are lot of GT restrictions as Hawkeye has tech data and each database/tables needs to be classified before access is granted to IEC. ICC team is already working with US Hawkeye team on getting access. Following are the contacts which might help to move this forward. 1 Hawkeye team-- Lead Chris (christopher.kraenzle@prattwhitney.com),  Tech team - (rafal.bielech@prattwhitney.com and jeffrey.kaye@prattwhitney.com) 2. ICC team--Dillon, John T PW <john.dillon@prattwhitney.com> 3. GT focal with whom ICC is working-- Moor, James J PW <James.Moor@prattwhitney.com>"
         }
       }
       ]
-    },
-    {
-      "name": " Web Applications"
     }
   ]
   
