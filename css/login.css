@@ -29,6 +29,10 @@
     color: #ffffff;
 }
 
+.active {
+    color: #ffffff;
+
+}
 
 .login-container {
     background-color: #fff;
