@@ -46,7 +46,6 @@ body {
   background-image:  url("../assets/img/view_bg.jpg");
   background-position-y: 150px;
   background-size: contain;
-  background-repeat: no-repeat;
 }
 .wrapper{
     align-items: flex-start;

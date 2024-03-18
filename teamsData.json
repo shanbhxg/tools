@@ -141,7 +141,63 @@
           }
         }
       ]
+    },
+    {
+      "name": "Fleet Analytics",
+      "softwareTools": [
+        {
+          "name": "PW-Hawkeye",         
+          "fields": {
+          "Name": "PW-Hawkeye",
+          "Team": "EDSI - CE",
+          "Domain": "Fleet Analytics",
+          "Need Date": "02-11-23",
+          "Purpose": "Need access to Hawkeye to get access to DPHM data (engine health monitoring sensors) and SAP (QN database for ESTP ).",
+          "Application": "The PW Hawkeye Platform will help the Enterprise to better understand, define, and access data. The Platform consist of an Enterprise Data Warehouse (Azure), Enterprise Data Catalog & Governance.  The Enterprise data warehouse consist of data from a number of transactional data systems such as SAP, Teamcenter, Solumina, and much more. confluence page: https://confluence.utc.com/display/NEDMP/PW+Hawkeye",
+          "Version": "",
+          "S/W Type": "PW - Internal",
+          "Installation": "",
+          "License": "IEC Access",
+          "Comments": "Right now Non-US persons (Ex-cept few MRO shops) are not given access to Hawkeye dataplatform.  There are lot of GT restrictions as Hawkeye has tech data and each database/tables needs to be classified before access is granted to IEC. ICC team is already working with US Hawkeye team on getting access. Following are the contacts which might help to move this forward. 1 Hawkeye team-- Lead Chris (christopher.kraenzle@prattwhitney.com),  Tech team - (rafal.bielech@prattwhitney.com and jeffrey.kaye@prattwhitney.com) 2. ICC team--Dillon, John T PW <john.dillon@prattwhitney.com> 3. GT focal with whom ICC is working-- Moor, James J PW <James.Moor@prattwhitney.com>"
+        }
+      }
+      ]
+    },
+    {
+      "name": "Methods Development",
+      "softwareTools": [
+        {
+          "name": "UG - NX Compiler and Visual Studio Coupling",         
+          "fields": {
+          "Name": "UG - NX Compiler and Visual Studio Coupling",
+          "Team": "MSEN",
+          "Domain": "Methods Development",
+          "Need Date": "",
+          "Purpose": "NX Open Coding for methods development",
+          "Application": "",
+          "Version": "",
+          "S/W Type": "Commercial",
+          "Installation": "eVDI",
+          "License": "IEC Access",
+          "Comments": "Right now Non-US persons (Ex-cept few MRO shops) are not given access to Hawkeye dataplatform.  There are lot of GT restrictions as Hawkeye has tech data and each database/tables needs to be classified before access is granted to IEC. ICC team is already working with US Hawkeye team on getting access. Following are the contacts which might help to move this forward. 1 Hawkeye team-- Lead Chris (christopher.kraenzle@prattwhitney.com),  Tech team - (rafal.bielech@prattwhitney.com and jeffrey.kaye@prattwhitney.com) 2. ICC team--Dillon, John T PW <john.dillon@prattwhitney.com> 3. GT focal with whom ICC is working-- Moor, James J PW <James.Moor@prattwhitney.com>"
+        }
+      }
+      ]
+    },
+    {
+      "name": "Performance"
+    },
+    {
+      "name": "Systems Design"
+    },
+    {
+      "name": "Systems Engineering"
+    },
+    {
+      "name": "Web Development"
+    },
+    {
+      "name": "Web Applications"
     }
-    
   ]
   

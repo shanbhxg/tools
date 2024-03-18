@@ -1,6 +1,6 @@
 {
   "dependencies": {
-   
+    "electron-packager": "^15.2.0"
   },
   "name": "tool-management",
   "version": "1.0.0",
@@ -10,13 +10,17 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
     "dev:watch": "npx electronmon --trace-warnings .",
-    "build":"electron-builder"
+    "build": "electron-builder",
+    "package": "set NODE_TLS_REJECT_UNAUTHORIZED=0 && electron-packager . --platform=win32 --arch=x64 --out=dist --overwrite --ignore-certificate"
+  },
+  "config": {
+    "strict-ssl": false
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "electron-packager": "^15.2.0",
     "electron": "^6.1.2",
     "electron-builder": "^24.13.3"
-   
   }
 }
