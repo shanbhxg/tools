@@ -6,10 +6,10 @@ const path = require('path');
 
 function createMainWindow() {
     const mainWindow = new BrowserWindow({
-        
         title: 'My Tool App',
         height: 1000,
         width: 1000,
+        icon: './assets/img/icon.png',
         nodeIntegration: true,
         contextIsolation: false,
         webPreferences: {
