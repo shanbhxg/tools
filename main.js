@@ -18,7 +18,7 @@ function createMainWindow() {
     }
     });
 
-    mainWindow.loadFile('./home.html');
+    mainWindow.loadFile('./login.html');
 }
   
 

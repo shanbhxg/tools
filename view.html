@@ -72,6 +72,10 @@
       </div>
     <script>
 
+      var fs = require('fs');
+      const path = require('path');
+          const filePath = path.join('//pinbaf01.pwintl.us/IEC/Data_Analytics_Methods/WebDevelopment/Tool&Software', 'data.json');
+
           function displayAll(){
             if (document.querySelector('select').value === '') {
             let teams = document.querySelectorAll(".team-item");
@@ -109,7 +113,7 @@
 
           async function fetchTeamsData() {
             try {
-              const response = await fetch('data.json');
+              const response = await fetch(filePath);
               const data = await response.json();
               return data;
             } catch (error) {
