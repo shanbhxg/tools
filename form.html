@@ -255,43 +255,11 @@
                 </form>
 
             </div>
-
-            <div id="unauthorized" class="hidden ">
-                <div class="login-box-denied">
-                    <h2>Access Denied for Addition of Tools</h2>
-                    <form onsubmit="return validateForm()" method="post" >
-                        
-                        <a id="deniedmainBtn">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            Back
-                        </a>
-                    </form>
-                </div>
-            </div>
         </div>
     </div>
 
     <script>
 
-        //Give Access For Only Super Users - hardCoded
-
-        var authorizedDiv = document.getElementById("authorized");
-        var unauthorizedDiv = document.getElementById("unauthorized");
-
-        if (login_username === "F337751") {
-            authorizedDiv.classList.remove("hidden");
-            unauthorizedDiv.classList.add("hidden");
-        } else {
-            authorizedDiv.classList.add("hidden");
-            unauthorizedDiv.classList.remove("hidden");
-        }
-
-        //Passing back the UserID to home on Click of Button - "Back"
-        const back = document.getElementById("deniedmainBtn");
-        back.href = `home.html?login_username=${login_username}`;
 
 
 
