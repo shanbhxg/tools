@@ -17,7 +17,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./css/form.css">
+    <link rel="stylesheet" href="./Styles/form.css">
 </head>
 
 <body>
@@ -27,19 +27,19 @@
             <div class="dz-page-header-content-type-text dz-text">RTX Enterprise
                 <ul class="nav justify-content-end">
                     <li class="nav-item">
-                        <a class="nav-link" href="home.html">Home</a>
+                        <a class="nav-link" aria-current="page" href="home.html">Home</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="form.html">Add</a>
+                        <a class="nav-link active" href="form.html>Add</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="view.html">View</a>
+                        <a class="nav-link" href="view.html>View</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link " href="login.html">Logout</a>
+                        <a class="nav-link "  href="login.html">Logout</a>
                     </li>
                 </ul>
 
@@ -55,206 +55,214 @@
     <div class="main_body ">
         <div>
 
+            <div id="authorized" class="hidden">
+                <div class="appForm">
+                    <form method="POST" class="form" id="dataform">
+                        <div id="full">
+                            <div id="left" class="">
+                                <div class="form-group ">
+                                    <label>S/W Application:</label>
+                                    <input type="text" id="swApplication" name="swApplication" required>
+                                </div>
 
-            <div class="appForm">
-                <form method="POST" class="form" id="dataform">
-                    <div id="full">
-                        <div id="left" class="">
-                            <div class="form-group ">
-                                <label>S/W Application:</label>
-                                <input type="text" id="swApplication" name="swApplication" required>
+                                <div class="form-group ">
+                                    <label>Team:</label><br>
+
+                                    <input type="checkbox" class="btn-check btn-info team_chkbx" id="EDSI-CORE"
+                                        name="installation" value="EDSI-CORE" autocomplete="off">
+                                    <label class="btn btn-outline-secondary chkbx" for="EDSI-CORE">EDSI-CORE</label>
+
+                                    <input type="checkbox" class="btn-check team_chkbx" id="EDSI-EDSC"
+                                        name="installation" value="EDSI-EDSC" autocomplete="off">
+                                    <label class="btn btn-outline-secondary chkbx" for="EDSI-EDSC">EDSI-EDSC</label>
+
+                                    <input type="checkbox" class="btn-check team_chkbx" id="ASE,CSE" name="installation"
+                                        value="ASE,CSE" autocomplete="off">
+                                    <label class="btn btn-outline-secondary chkbx" for="ASE,CSE">ASE,CSE</label>
+
+
+                                    <input type="checkbox" class="btn-check btn-info team_chkbx" id="MSEN"
+                                        name="installation" value="MSEN" autocomplete="off">
+                                    <label class="btn btn-outline-secondary chkbx" for="MSEN">MSEN</label><br>
+
+                                    <input type="checkbox" class="btn-check team_chkbx" id="EDSI-CE" name="installation"
+                                        value="EDSI-CE" autocomplete="off">
+                                    <label class="btn btn-outline-secondary chkbx" for="EDSI-CE">EDSI-CE</label>
+
+                                    <input type="checkbox" class="btn-check btn-info team_chkbx" id="ASE,ESTO"
+                                        name="installation" value="ASE,ESTO" autocomplete="off">
+                                    <label class="btn btn-outline-secondary chkbx" for="ASE,ESTO">ASE,ESTO</label>
+
+                                    <input type="checkbox" class="btn-check team_chkbx" id="ASE" name="installation"
+                                        value="ASE" autocomplete="off">
+                                    <label class="btn btn-outline-secondary chkbx" for="ASE">ASE</label>
+
+                                    <input type="checkbox" class="btn-check btn-info team_chkbx" id="ENDO"
+                                        name="installation" value="ENDO" autocomplete="off">
+                                    <label class="btn btn-outline-secondary chkbx" for="ENDO">ENDO</label>
+
+                                    <input type="checkbox" class="btn-check team_chkbx" id="ESTO" name="installation"
+                                        value="ESTO" autocomplete="off">
+                                    <label class="btn btn-outline-secondary chkbx" for="ESTO">ESTO</label>
+
+
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Domain:</label><br>
+                                    <input type="checkbox" class="btn-check btn-info domain_chkbx" id="Aero-Thermal"
+                                        name="domain" value="Aero-Thermal" autocomplete="off">
+                                    <label class="btn btn-outline-secondary chkbx"
+                                        for="Aero-Thermal">Aero-Thermal</label>
+
+                                    <input type="checkbox" class="btn-check domain_chkbx"
+                                        id="Data-Science and Analytics" name="domain" value="Data-Science and Analytics"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-secondary chkbx"
+                                        for="Data-Science and Analytics">Data-Science and Analytics</label>
+
+                                    <input type="checkbox" class="btn-check domain_chkbx" id="Methods Development"
+                                        name="domain" value="Methods Development" autocomplete="off">
+                                    <label class="btn btn-outline-secondary chkbx" for="Methods Development">Methods
+                                        Development</label>
+
+
+                                    <input type="checkbox" class="btn-check btn-info domain_chkbx" id="Web Development"
+                                        name="domain" value="Web Development" autocomplete="off">
+                                    <label class="btn btn-outline-secondary chkbx" for="Web Development">Web
+                                        Development</label><br>
+
+                                    <input type="checkbox" class="btn-check domain_chkbx" id="Performance" name="domain"
+                                        value="Performance" autocomplete="off">
+                                    <label class="btn btn-outline-secondary chkbx" for="Performance">Performance</label>
+
+                                    <input type="checkbox" class="btn-check btn-info domain_chkbx" id="Fleet Analytics"
+                                        name="domain" value="Fleet Analytics" autocomplete="off">
+                                    <label class="btn btn-outline-secondary chkbx" for="Fleet Analytics">Fleet
+                                        Analytics</label>
+
+                                    <input type="checkbox" class="btn-check btn-info domain_chkbx" id="Systems Design"
+                                        name="domain" value="Systems Design" autocomplete="off">
+                                    <label class="btn btn-outline-secondary chkbx" for="Systems Design">Systems
+                                        Design</label>
+
+                                    <input type="checkbox" class="btn-check domain_chkbx" id="Structural Design"
+                                        name="domain" value="Structural Design" autocomplete="off">
+                                    <label class="btn btn-outline-secondary chkbx" for="Structural Design">Structural
+                                        Design</label>
+
+                                    <input type="checkbox" class="btn-check domain_chkbx" id="Systems Engineering"
+                                        name="domain" value="Systems Engineering" autocomplete="off">
+                                    <label class="btn btn-outline-secondary chkbx" for="Systems Engineering">Systems
+                                        Engineering</label>
+                                </div>
+
+
+
+                                <div class="form-group">
+                                    <label>Need Date:</label>
+                                    <input type="date" id="needDate" name="needDate" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Application:</label>
+                                    <input type="text" id="Application" name="Application" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Purpose:</label>
+                                    <input type="text" id="purpose" name="purpose" required>
+                                </div>
                             </div>
 
-                            <div class="form-group ">
-                                <label>Team:</label><br>
 
-                                <input type="checkbox" class="btn-check btn-info team_chkbx" id="EDSI-CORE"
-                                    name="installation" value="EDSI-CORE" autocomplete="off">
-                                <label class="btn btn-outline-secondary chkbx" for="EDSI-CORE">EDSI-CORE</label>
+                            <div id="right" class="">
+                                <div class="form-group">
+                                    <label>Version:</label>
+                                    <input type="text" id="version" name="version" required>
+                                </div>
 
-                                <input type="checkbox" class="btn-check team_chkbx" id="EDSI-EDSC" name="installation"
-                                    value="EDSI-EDSC" autocomplete="off">
-                                <label class="btn btn-outline-secondary chkbx" for="EDSI-EDSC">EDSI-EDSC</label>
+                                <div class="form-group">
+                                    <label>Software Type:</label><br>
+                                    <select id="swType" name="swType" required>
+                                        <option value="">Select Software Type</option>
+                                        <option value="Commercial">Commercial</option>
+                                        <option value="Open Source">Open Source</option>
+                                        <option value="PW Internal">PW Internal</option>
+                                    </select>
+                                </div>
 
-                                <input type="checkbox" class="btn-check team_chkbx" id="ASE,CSE" name="installation"
-                                    value="ASE,CSE" autocomplete="off">
-                                <label class="btn btn-outline-secondary chkbx" for="ASE,CSE">ASE,CSE</label>
+                                <div class="form-group">
+                                    <label>S/W Installation Type:</label><br>
 
+                                    <input type="checkbox" class="btn-check chkbx sw_install_chkbx" id="catalog"
+                                        name="swInstallation" value="Catalog" autocomplete="off">
+                                    <label class="btn btn-outline-secondary" for="catalog">Catalog</label>
 
-                                <input type="checkbox" class="btn-check btn-info team_chkbx" id="MSEN"
-                                    name="installation" value="MSEN" autocomplete="off">
-                                <label class="btn btn-outline-secondary chkbx" for="MSEN">MSEN</label><br>
+                                    <input type="checkbox" class="btn-check btn-info chkbx sw_install_chkbx"
+                                        id="nonCatalog" name="swInstallation" value="Non-Catalog" autocomplete="off">
+                                    <label class="btn btn-outline-secondary" for="nonCatalog">Non-Catalog</label>
 
-                                <input type="checkbox" class="btn-check team_chkbx" id="EDSI-CE" name="installation"
-                                    value="EDSI-CE" autocomplete="off">
-                                <label class="btn btn-outline-secondary chkbx" for="EDSI-CE">EDSI-CE</label>
+                                </div>
 
-                                <input type="checkbox" class="btn-check btn-info team_chkbx" id="ASE,ESTO"
-                                    name="installation" value="ASE,ESTO" autocomplete="off">
-                                <label class="btn btn-outline-secondary chkbx" for="ASE,ESTO">ASE,ESTO</label>
+                                <div class="form-group">
+                                    <label>Installation:</label><br>
+                                    <input type="checkbox" class="btn-check chkbx installation_chkbx" id="eVDI"
+                                        name="installation" autocomplete="off" value="eVDI">
+                                    <label class="btn btn-outline-secondary" for="eVDI">eVDI</label>
 
-                                <input type="checkbox" class="btn-check team_chkbx" id="ASE" name="installation"
-                                    value="ASE" autocomplete="off">
-                                <label class="btn btn-outline-secondary chkbx" for="ASE">ASE</label>
+                                    <input type="checkbox" class="btn-check btn-info chkbx installation_chkbx" id="MWS"
+                                        name="installation" value="MWS" autocomplete="off">
+                                    <label class="btn btn-outline-secondary" for="MWS">MWS</label>
 
-                                <input type="checkbox" class="btn-check btn-info team_chkbx" id="ENDO"
-                                    name="installation" value="ENDO" autocomplete="off">
-                                <label class="btn btn-outline-secondary chkbx" for="ENDO">ENDO</label>
+                                </div>
 
-                                <input type="checkbox" class="btn-check team_chkbx" id="ESTO" name="installation"
-                                    value="ESTO" autocomplete="off">
-                                <label class="btn btn-outline-secondary chkbx" for="ESTO">ESTO</label>
+                                <div class="form-group">
+                                    <label>License:</label><br>
 
+                                    <input type="checkbox" class="btn-check chkbx License_chkbx" id="global"
+                                        name="license" value="Global" name="installation" autocomplete="off">
+                                    <label class="btn btn-outline-secondary" for="global">Global</label>
 
+                                    <input type="checkbox" class="btn-check btn-info chkbx License_chkbx" id="local"
+                                        name="license" value="Local" autocomplete="off">
+                                    <label class="btn btn-outline-secondary" for="local">Local</label>
 
-                            </div>
+                                    <input type="checkbox" class="btn-check chkbx License_chkbx" id="global/local"
+                                        name="license" value="Global/Local" autocomplete="off">
+                                    <label class="btn btn-outline-secondary" for="global/local">Global/Local</label>
 
-                            <div class="form-group">
-                                <label>Domain:</label><br>
-                                <input type="checkbox" class="btn-check btn-info domain_chkbx" id="Aero-Thermal"
-                                    name="domain" value="Aero-Thermal" autocomplete="off">
-                                <label class="btn btn-outline-secondary chkbx" for="Aero-Thermal">Aero-Thermal</label>
+                                    <input type="checkbox" class="btn-check btn-info chkbx License_chkbx" id="iecAccess"
+                                        name="license" value="IEC Access" autocomplete="off">
+                                    <label class="btn btn-outline-secondary" for="iecAccess">IEC Access</label>
 
-                                <input type="checkbox" class="btn-check domain_chkbx" id="Data-Science and Analytics"
-                                    name="domain" value="Data-Science and Analytics" autocomplete="off">
-                                <label class="btn btn-outline-secondary chkbx"
-                                    for="Data-Science and Analytics">Data-Science and Analytics</label>
+                                </div>
 
-                                <input type="checkbox" class="btn-check domain_chkbx" id="Methods Development"
-                                    name="domain" value="Methods Development" autocomplete="off">
-                                <label class="btn btn-outline-secondary chkbx" for="Methods Development">Methods
-                                    Development</label>
+                                <div class="form-group">
 
-
-                                <input type="checkbox" class="btn-check btn-info domain_chkbx" id="Web Development"
-                                    name="domain" value="Web Development" autocomplete="off">
-                                <label class="btn btn-outline-secondary chkbx" for="Web Development">Web
-                                    Development</label><br>
-
-                                <input type="checkbox" class="btn-check domain_chkbx" id="Performance" name="domain"
-                                    value="Performance" autocomplete="off">
-                                <label class="btn btn-outline-secondary chkbx" for="Performance">Performance</label>
-
-                                <input type="checkbox" class="btn-check btn-info domain_chkbx" id="Fleet Analytics"
-                                    name="domain" value="Fleet Analytics" autocomplete="off">
-                                <label class="btn btn-outline-secondary chkbx" for="Fleet Analytics">Fleet
-                                    Analytics</label>
-
-                                <input type="checkbox" class="btn-check btn-info domain_chkbx" id="Systems Design"
-                                    name="domain" value="Systems Design" autocomplete="off">
-                                <label class="btn btn-outline-secondary chkbx" for="Systems Design">Systems
-                                    Design</label>
-
-                                <input type="checkbox" class="btn-check domain_chkbx" id="Structural Design"
-                                    name="domain" value="Structural Design" autocomplete="off">
-                                <label class="btn btn-outline-secondary chkbx" for="Structural Design">Structural
-                                    Design</label>
-
-                                <input type="checkbox" class="btn-check domain_chkbx" id="Systems Engineering"
-                                    name="domain" value="Systems Engineering" autocomplete="off">
-                                <label class="btn btn-outline-secondary chkbx" for="Systems Engineering">Systems
-                                    Engineering</label>
-                            </div>
-
-
-
-                            <div class="form-group">
-                                <label>Need Date:</label>
-                                <input type="date" id="needDate" name="needDate" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Application:</label>
-                                <input type="text" id="Application" name="Application" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Purpose:</label>
-                                <input type="text" id="purpose" name="purpose" required>
-                            </div>
-                        </div>
-
-
-                        <div id="right" class="">
-                            <div class="form-group">
-                                <label>Version:</label>
-                                <input type="text" id="version" name="version" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Software Type:</label><br>
-                                <select id="swType" name="swType" required>
-                                    <option value="">Select Software Type</option>
-                                    <option value="Commercial">Commercial</option>
-                                    <option value="Open Source">Open Source</option>
-                                    <option value="PW Internal">PW Internal</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label>S/W Installation Type:</label><br>
-
-                                <input type="checkbox" class="btn-check chkbx sw_install_chkbx" id="catalog"
-                                    name="swInstallation" value="Catalog" autocomplete="off">
-                                <label class="btn btn-outline-secondary" for="catalog">Catalog</label>
-
-                                <input type="checkbox" class="btn-check btn-info chkbx sw_install_chkbx" id="nonCatalog"
-                                    name="swInstallation" value="Non-Catalog" autocomplete="off">
-                                <label class="btn btn-outline-secondary" for="nonCatalog">Non-Catalog</label>
-
-                            </div>
-
-                            <div class="form-group">
-                                <label>Installation:</label><br>
-                                <input type="checkbox" class="btn-check chkbx installation_chkbx" id="eVDI"
-                                    name="installation" autocomplete="off" value="eVDI">
-                                <label class="btn btn-outline-secondary" for="eVDI">eVDI</label>
-
-                                <input type="checkbox" class="btn-check btn-info chkbx installation_chkbx" id="MWS"
-                                    name="installation" value="MWS" autocomplete="off">
-                                <label class="btn btn-outline-secondary" for="MWS">MWS</label>
-
-                            </div>
-
-                            <div class="form-group">
-                                <label>License:</label><br>
-
-                                <input type="checkbox" class="btn-check chkbx License_chkbx" id="global" name="license"
-                                    value="Global" name="installation" autocomplete="off">
-                                <label class="btn btn-outline-secondary" for="global">Global</label>
-
-                                <input type="checkbox" class="btn-check btn-info chkbx License_chkbx" id="local"
-                                    name="license" value="Local" autocomplete="off">
-                                <label class="btn btn-outline-secondary" for="local">Local</label>
-
-                                <input type="checkbox" class="btn-check chkbx License_chkbx" id="global/local"
-                                    name="license" value="Global/Local" autocomplete="off">
-                                <label class="btn btn-outline-secondary" for="global/local">Global/Local</label>
-
-                                <input type="checkbox" class="btn-check btn-info chkbx License_chkbx" id="iecAccess"
-                                    name="license" value="IEC Access" autocomplete="off">
-                                <label class="btn btn-outline-secondary" for="iecAccess">IEC Access</label>
-
-                            </div>
-
-                            <div class="form-group">
-
-                                <div class="mb-3">
-                                    <label for="exampleFormControlTextarea1" class="form-label">Comments:</label>
-                                    <textarea class="form-control" id="comments" rows="4"
-                                        placeholder="Additional comments"></textarea>
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlTextarea1" class="form-label">Comments:</label>
+                                        <textarea class="form-control" id="comments" rows="4"
+                                            placeholder="Additional comments"></textarea>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <button type="submit" class="btn-primary btn_submit text-center">Submit</button>
-            </div>
+                        <button type="submit" class="btn-primary btn_submit text-center">Submit</button>
+                </div>
 
-            </form>
+                </form>
+
+            </div>
         </div>
     </div>
 
     <script>
+
+
+
+
         var fs = require('fs');
         const path = require('path');
 
@@ -315,7 +323,7 @@
                 Application
                 alert('Please fill out both location and data fields.');
                 return;
-            }
+            }f
             */
             const newData = {
                 name: SW_App,
@@ -334,7 +342,7 @@
                 }
             };
 
-            const filePath = path.join('//pinbaf01.pwintl.us/IEC/Data_Analytics_Methods/WebDevelopment/Tool&Software', 'data.json');
+            const filePath = path.join("\\\\pinbaf01.pwintl.us\\IEC\\Data_Analytics_Methods\\WebDevelopment\\Tool&Software", 'data.json');
 
             fs.readFile(filePath, 'utf-8', (err, fileData) => {
                 if (err) {
@@ -369,7 +377,7 @@
                         softwareTools: []
                     });
                 }
-                
+
 
                 json[categoryIndex].softwareTools.push(newData);
 

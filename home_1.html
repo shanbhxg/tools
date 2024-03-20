@@ -18,7 +18,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./Styles/home.css">
 
 </head>
 
@@ -32,13 +32,13 @@
                         <a class="nav-link active" aria-current="page" href="home.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="form.html">Add</a>
+                        <a class="nav-link visibility" href="form.html>Add</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="view.html">View</a>
+                        <a class="nav-link"  href="view.html>View</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="login.html">Logout</a>
+                        <a class="nav-link " " href="login.html">Logout</a>
                     </li>
                 </ul>
 
@@ -52,16 +52,17 @@
     <div class="filter">
         <div class="card" id="filter">
             <div class="card-text">
-                        <select aria-label="content type dropdown" name="searchType" class="me-2 ng-pristine ng-valid ng-touched" onchange="display()">
-                            <option value="" disabled selected hidden>Select</option>
-                            <option value="all">All</option> 
-                            <option value="datasci">Data Science and Analytics</option>
-                            <option value="methods">Methods</option>
-                            <option value="fullstack">Full Stack</option>
-                            <option value="systems">Systems</option>
-                        </select>
-                        
-            </div> 
+                <select aria-label="content type dropdown" name="searchType"
+                    class="me-2 ng-pristine ng-valid ng-touched" onchange="display()">
+                    <option value="" disabled selected hidden>Select</option>
+                    <option value="all">Methods, Systems and Data Science</option>
+                    <option value="datasci">Data Science and Analytics</option>
+                    <option value="methods">Methods</option>
+                    <option value="fullstack">Full Stack</option>
+                    <option value="systems">Systems</option>
+                </select>
+
+            </div>
             <div class="summary">
             </div>
         </div>
@@ -75,108 +76,111 @@
 
 <script>
     let team = [
-    { name: "Gupta", position: "Senior Manager",description:"ABCD........", imageUrl: "./assets/img/team_bg.jpg", team:'datasci' },
-    { name: "Sujith", position: "Principal Engineer",description:"ABCD........", imageUrl: "./assets/img/team_bg.jpg", team:'datasci'},
-    { name: "Aswini", position: "Principal Engineer",description:"ABCD........", imageUrl: "./assets/img/team_bg.jpg",team:'methods' },
-    { name: "Jayaprakash", position: "Principal Engineer",description:"ABCD........", imageUrl: "./assets/img/team_bg.jpg", team:'datasci' },
-    { name: "Ashif", position: "Principal Engineer",description:"ABCD........", imageUrl: "./assets/img/team_bg.jpg",team:'fullstack'  },
-    { name: "Ankit", position: "Principal Engineer", description:"ABCD........",imageUrl: "./assets/img/team_bg.jpg",team:'methods'},
-    { name: "Dileep", position: "Principal Engineer",description:"ABCD........", imageUrl: "./assets/img/team_bg.jpg",team:'methods'},
-    { name: "Uday", position: "Senior Engineer",description:"ABCD........", imageUrl: "./assets/img/team_bg.jpg", team:'datasci'},
-    { name: "Santhosh", position: "Engineer II",description:"ABCD........", imageUrl: "./assets/img/team_bg.jpg", team:'datasci' },
-    { name: "Shreeraj", position: "Engineer",description:"ABCD........", imageUrl: "./assets/img/team_bg.jpg", team:'datasci'},
-    { name: "Lavanya", position: "Engineer II", description:"ABCD........",imageUrl: "./assets/img/team_bg.jpg",team:'fullstack' },
-    { name: "Sonali", position: "Engineer I",description:"ABCD........", imageUrl: "./assets/img/team_bg.jpg", team:'datasci' },
-    { name: "Abhay", position: "Senior Engineer",description:"ABCD........", imageUrl: "./assets/img/team_bg.jpg",team:'methods'},
-    { name: "Apoorva", position: "Senior Engineer",description:"ABCD........", imageUrl: "./assets/img/team_bg.jpg" ,team:'systems'},
-    { name: "Anshuman", position: "Senior Engineer",description:"ABCD........", imageUrl: "./assets/img/team_bg.jpg",team:'datasci' },
-    { name: "Nagesh", position: "Senior Engineer",description:"ABCD........", imageUrl: "./assets/img/team_bg.jpg",team:'methods'},
-    { name: "Shaniya", position: "Intern",description:"ABCD........", imageUrl: "./assets/img/team_bg.jpg",team:'datasci' },
-    { name: "Nikhil", position: "Intern",description:"ABCD........", imageUrl: "./assets/img/team_bg.jpg",team:'fullstack'  },
-    { name: "Deepti", position: "Intern",description:"ABCD........", imageUrl: "./assets/img/team_bg.jpg",team:'fullstack'  },
-    { name: "Shreyank", position: "Intern",description:"ABCD........", imageUrl: "./assets/img/team_bg.jpg",team:'methods' },
-];
+        { name: "Gupta", position: "Senior Manager", description: "ABCD........", imageUrl: "./assets/img/team_bg.jpg", team: 'datasci' },
+        { name: "Sujith", position: "Team Lead", description: "ABCD........", imageUrl: "./assets/img/team_bg.jpg", team: 'datasci' },
+        { name: "Aswini", position: "Team Lead", description: "ABCD........", imageUrl: "./assets/img/team_bg.jpg", team: 'methods' },
+        { name: "Jayaprakash", position: "Team Lead", description: "ABCD........", imageUrl: "./assets/img/team_bg.jpg", team: 'datasci' },
+        { name: "Ashif", position: "Team Lead", description: "ABCD........", imageUrl: "./assets/img/team_bg.jpg", team: 'fullstack' },
+        { name: "Ankit", position: "Team Lead", description: "ABCD........", imageUrl: "./assets/img/team_bg.jpg", team: 'methods' },
+        { name: "Dileep", position: "Team Lead", description: "ABCD........", imageUrl: "./assets/img/team_bg.jpg", team: 'methods' },
+        { name: "Uday", position: "Team Lead", description: "ABCD........", imageUrl: "./assets/img/team_bg.jpg", team: 'datasci' },
+        { name: "Santhosh", position: "Team Lead", description: "ABCD........", imageUrl: "./assets/img/team_bg.jpg", team: 'datasci' },
+        { name: "Shreeraj", position: "Team Lead", description: "ABCD........", imageUrl: "./assets/img/team_bg.jpg", team: 'datasci' },
+        { name: "Lavanya", position: "Team Lead", description: "ABCD........", imageUrl: "./assets/img/team_bg.jpg", team: 'fullstack' },
+        { name: "Sonali", position: "Team Lead", description: "ABCD........", imageUrl: "./assets/img/team_bg.jpg", team: 'datasci' },
+        { name: "Abhay", position: "Team Lead", description: "ABCD........", imageUrl: "./assets/img/team_bg.jpg", team: 'methods' },
+        { name: "Apoorva", position: "Team Lead", description: "ABCD........", imageUrl: "./assets/img/team_bg.jpg", team: 'systems' },
+        { name: "Anshuman", position: "Team Lead", description: "ABCD........", imageUrl: "./assets/img/team_bg.jpg", team: 'datasci' },
+        { name: "Nagesh", position: "Team Lead", description: "ABCD........", imageUrl: "./assets/img/team_bg.jpg", team: 'methods' },
+        { name: "Shaniya", position: "Team Lead", description: "ABCD........", imageUrl: "./assets/img/team_bg.jpg", team: 'datasci' },
+        { name: "Nikhil", position: "Team Lead", description: "ABCD........", imageUrl: "./assets/img/team_bg.jpg", team: 'fullstack' },
+        { name: "Deepti", position: "Team Lead", description: "ABCD........", imageUrl: "./assets/img/team_bg.jpg", team: 'fullstack' },
+        { name: "Shreyank", position: "Team Lead", description: "ABCD........", imageUrl: "./assets/img/team_bg.jpg", team: 'methods' },
+    ];
 
 
-let heroSection = document.querySelector('.hero-section .card-grid');
-for (let i = 0; i < team.length; i++) {
-    
-    let cardAnchor = document.createElement('a');
-    cardAnchor.classList.add('card');
-    cardAnchor.href = "#";
+   
 
-    
-    let cardBackground = document.createElement('div');
-    cardBackground.classList.add('card__background');
-    cardBackground.style.backgroundImage = `url(${team[i ].imageUrl})`;
-    cardAnchor.appendChild(cardBackground);
+    let heroSection = document.querySelector('.hero-section .card-grid');
+    for (let i = 0; i < team.length; i++) {
 
-    
-    let cardContent = document.createElement('div');
-    cardContent.classList.add('card__content');
+        let cardAnchor = document.createElement('a');
+        cardAnchor.classList.add('card');
+        cardAnchor.href = "#";
 
-    
-    let categoryPos = document.createElement('p');
-    categoryPos.classList.add('card__category');
-    categoryPos.textContent = team[i ].position;
-    cardContent.appendChild(categoryPos);
 
-    
-    let heading = document.createElement('h3');
-    heading.classList.add('card__heading');
-    heading.textContent = team[i ].name;
-    cardContent.appendChild(heading);
+        let cardBackground = document.createElement('div');
+        cardBackground.classList.add('card__background');
+        cardBackground.style.backgroundImage = `url(${team[i].imageUrl})`;
+        cardAnchor.appendChild(cardBackground);
 
-    let categoryParagraph = document.createElement('p');
-    categoryParagraph.classList.add('card__category_para');
-    categoryParagraph.textContent = team[i].description;
-    cardContent.appendChild(categoryParagraph);    
-    cardAnchor.appendChild(cardContent);
-    heroSection.appendChild(cardAnchor);
 
-    let filter = document.querySelector('.filter');
-    let summary = document.querySelector('.summary');
+        let cardContent = document.createElement('div');
+        cardContent.classList.add('card__content');
 
-    // based on filter value, display only those members
-    function display() {
-        let filterValue = filter.querySelector('select').value;
-        let filteredTeam = team;
-        if (filterValue !== 'all') {
-            filteredTeam = team.filter(member => member.team.toLowerCase() === filterValue);
+
+        let categoryPos = document.createElement('p');
+        categoryPos.classList.add('card__category');
+        categoryPos.textContent = team[i].position;
+        cardContent.appendChild(categoryPos);
+
+
+        let heading = document.createElement('h3');
+        heading.classList.add('card__heading');
+        heading.textContent = team[i].name;
+        cardContent.appendChild(heading);
+
+        let categoryParagraph = document.createElement('p');
+        categoryParagraph.classList.add('card__category_para');
+        categoryParagraph.textContent = team[i].description;
+        cardContent.appendChild(categoryParagraph);
+        cardAnchor.appendChild(cardContent);
+        heroSection.appendChild(cardAnchor);
+
+        let filter = document.querySelector('.filter');
+        let summary = document.querySelector('.summary');
+
+        // based on filter value, display only those members
+        function display() {
+            let filterValue = filter.querySelector('select').value;
+            let filteredTeam = team;
+            if (filterValue !== 'all') {
+                filteredTeam = team.filter(member => member.team.toLowerCase() === filterValue);
+            }
+            heroSection.innerHTML = '';
+            for (let i = 0; i < filteredTeam.length; i++) {
+                let cardAnchor = document.createElement('a');
+                cardAnchor.classList.add('card');
+                cardAnchor.href = "#";
+
+                let cardBackground = document.createElement('div');
+                cardBackground.classList.add('card__background');
+                cardBackground.style.backgroundImage = `url(${filteredTeam[i].imageUrl})`;
+                cardAnchor.appendChild(cardBackground);
+
+                let cardContent = document.createElement('div');
+                cardContent.classList.add('card__content');
+
+                let categoryPos = document.createElement('p');
+                categoryPos.classList.add('card__category');
+                categoryPos.textContent = filteredTeam[i].position;
+                cardContent.appendChild(categoryPos);
+
+                let heading = document.createElement('h3');
+                heading.classList.add('card__heading');
+                heading.textContent = filteredTeam[i].name;
+                cardContent.appendChild(heading);
+
+                let categoryParagraph = document.createElement('p');
+                categoryParagraph.classList.add('card__category_para');
+                categoryParagraph.textContent = filteredTeam[i].description;
+                cardContent.appendChild(categoryParagraph);
+                cardAnchor.appendChild(cardContent);
+                heroSection.appendChild(cardAnchor);
+            }
+            summary.textContent = `Displaying ${filteredTeam.length} members`;
         }
-        heroSection.innerHTML = '';
-        for (let i = 0; i < filteredTeam.length; i++) {
-            let cardAnchor = document.createElement('a');
-            cardAnchor.classList.add('card');
-            cardAnchor.href = "#";
-
-            let cardBackground = document.createElement('div');
-            cardBackground.classList.add('card__background');
-            cardBackground.style.backgroundImage = `url(${filteredTeam[i].imageUrl})`;
-            cardAnchor.appendChild(cardBackground);
-
-            let cardContent = document.createElement('div');
-            cardContent.classList.add('card__content');
-
-            let categoryPos = document.createElement('p');
-            categoryPos.classList.add('card__category');
-            categoryPos.textContent = filteredTeam[i].position;
-            cardContent.appendChild(categoryPos);
-
-            let heading = document.createElement('h3');
-            heading.classList.add('card__heading');
-            heading.textContent = filteredTeam[i].name;
-            cardContent.appendChild(heading);
-
-            let categoryParagraph = document.createElement('p');
-            categoryParagraph.classList.add('card__category_para');
-            categoryParagraph.textContent = filteredTeam[i].description;
-            cardContent.appendChild(categoryParagraph);
-            cardAnchor.appendChild(cardContent);
-            heroSection.appendChild(cardAnchor);
-        }
-        summary.textContent = `Displaying ${filteredTeam.length} members`;
     }
-}
 </script>
+
 </html>
