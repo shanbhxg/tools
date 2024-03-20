@@ -275,29 +275,6 @@
     </div>
 
     <script>
-        const param = new URLSearchParams(window.location.search);
-        let login_username = param.get('login_username');
-
-        const user_id_div = document.getElementById("user_id_login-logout");
-        user_id_div.innerHTML = `<p> Logout-(${login_username}) </p>`;
-
-        //In home page
-        // Passing the login_username parameter to the Home page
-        const home = document.getElementById("user_id_login-home");
-        home.href = `home.html?login_username=${login_username}`;
-        hometextContent = 'Home';
-
-        //In form page
-        // Passing the login_username parameter to the form page
-        const form = document.getElementById("user_id_login-form");
-        form.href = `form.html?login_username=${login_username}`;
-        form.textContent = 'Add';
-
-        //In form page
-        // Passing the login_username parameter to the view page
-        const view = document.getElementById("user_id_login-view");
-        view.href = `view.html?login_username=${login_username}`;
-        view.textContent = 'View';
 
         //Give Access For Only Super Users - hardCoded
 
