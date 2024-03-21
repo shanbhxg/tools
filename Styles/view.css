@@ -1,0 +1,183 @@
+.header_nav {
+  background-image: linear-gradient(to right, #003b56, #7f8c98);
+}
+
+.headernav_inner_contents {
+  background-image: linear-gradient(to right, #348fa2, #1b8bd2);
+  margin: 1%;
+  padding: 5px;
+}
+
+.headernav_inner_contents2 {
+  font-weight: bold;
+}
+
+.nav {
+  float: right;
+  font-size: 20px;
+}
+
+.p-4 {
+  padding: 19px;
+}
+
+#header {
+  text-align: center;
+  background-color: #f0f0f0;
+}
+
+.nav-link {
+  color: black
+}
+
+.nav-link:focus,
+.nav-link:hover {
+  color: #ffffff;
+}
+
+.active {
+  color: #ffffff;
+}
+html{
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+body {
+background-image:  url("../assets/img/view_bg.jpg");
+background-position-y: 150px;
+background-repeat: no-repeat;
+}
+.wrapper{
+  align-items: flex-start;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  min-height: 100%;
+  justify-content: center;
+  padding: var(--spacing-xxl) var(--spacing-l);
+}
+:root{
+  --background-dark: #2d3548;
+  --text-light: rgba(255,255,255,0.6);
+  --text-lighter: rgba(255,255,255,0.9);
+  --spacing-s: 8px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 64px;
+  --width-container: 1200px;
+}
+
+/* teams */
+
+.container {
+margin: 20px auto;
+width: 80%;
+box-sizing: border-box;
+}
+
+#team-list {
+float: left;
+
+width: 40%;
+padding-right: 20px;
+}
+
+#team-list ul {
+list-style: none;
+
+padding: 0;
+}
+
+.team-item {
+cursor: pointer;
+padding: 5px 10px;
+margin: 5px 0;
+
+background-color: #f0f0f0;
+border: 1px solid #ccc;
+border-radius: 5px;
+font-weight: bold;
+}
+
+.team-item.selected {
+background-color: #4a8cf08e;
+}
+
+.software-tools-list {
+list-style: none;
+padding: 0;
+}
+
+.tool-item {
+cursor: pointer;
+padding: 5px 10px;
+margin: 5px 0;
+background-color: #f0f0f088;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+
+#tool-details {
+float: left;
+color: #ffffff;
+width: 60%;
+padding: 20px;
+box-sizing: border-box;
+border-radius: 40px;
+}
+
+#tool-details:empty {
+display: none;
+}
+
+.toggle-icon{
+float:right;
+}
+
+.field-item {
+margin-bottom: 10px;
+}
+
+.field-item strong {
+margin-right: 5px;
+}
+
+button:hover {
+background-color: #ccc;
+color: #000;
+}
+
+button:active {
+transform: scale(0.98);
+
+}
+
+select {
+padding: 5px;
+border-radius: 5px;
+border: 1px solid #cccccc73;
+
+}
+
+select:focus {
+color: var(--bs-body-color);
+background-color: var(--bs-body-bg);
+border-color: #86b7fe;
+outline: 0;
+box-shadow: 0 0 0 0.25rem rgba(13,110,253,.25);
+}
+
+.delete-button {
+float: right;
+background-color: #ff00006c;
+}
+
+
+.full {
+margin: 20px;
+background-color: #ffffff9c;
+padding: 3%;
+border-radius: 10px;
+}

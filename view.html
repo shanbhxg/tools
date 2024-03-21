@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:wght@300&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./Styles/view.css">
+  <script src="scripts/search.js"></script>
+  <title>Software Tool Management</title>
+</head>
+
+<body>
+  <div class="header_nav p-4 bg-black/60 sm:min-w-[29rem] sm:min-h-[8rem]">
+    <div class="headernav_inner_contents">
+      <div class="dz-page-header-content-type-text dz-text">RTX Enterprise
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link" id="user_id_login-home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="user_id_login-form">Add</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" id="user_id_login-view">View</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="user_id_login-logout"  href="login.html"></a>
+          </li>
+        </ul>
+
+      </div>
+      <div class="dz-page-header-title headernav_inner_contents2">
+        Pratt Whitney Tool Support
+      </div>
+    </div>
+  </div>
+  <h2 id="header"> Tools </h2>
+  <div class="wrapper">
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <div class="drop-down d-flex">
+            <select aria-label="content type dropdown" name="searchType" class="me-2 ng-pristine ng-valid ng-touched"
+              onchange="display()">
+              <option value="" disabled selected hidden>Select</option>
+              <option value="all">All</option>
+              <option value="tools">Tools</option>
+              <option value="domains">Domains</option>
+            </select>
+            <input onkeypress="search()" onclick="displayAll()" class="form-control me-2" id="search"
+              placeholder="Search for tools..." aria-label="Search">
+            <!-- <button class="btn" id="del" onclick="deleteTools()">Remove</button> -->
+          </div>
+        </div>
+      </div>
+      <div id="team-list">
+        <ul>
+        </ul>
+      </div>
+
+      <div id="tool-details">
+      </div>
+    </div>
+  </div>
+  <script>
+
+    const param = new URLSearchParams(window.location.search);
+    let login_username = param.get('login_username');
+
+    const user_id_div = document.getElementById("user_id_login-logout");
+    user_id_div.innerHTML = `<p> Logout-(${login_username}) </p>`;
+
+    //In home page
+    // Passing the login_username parameter to the Home page
+    const home = document.getElementById("user_id_login-home");
+    home.href = `home.html?login_username=${login_username}`;
+    hometextContent = 'Home';
+
+    //In form page
+    // Passing the login_username parameter to the form page
+    const form = document.getElementById("user_id_login-form");
+    form.href = `form.html?login_username=${login_username}`;
+    form.textContent = 'Add';
+
+    //In form page
+    // Passing the login_username parameter to the view page
+    const view = document.getElementById("user_id_login-view");
+    view.href = `view.html?login_username=${login_username}`;
+    view.textContent = 'View';
+
+    var fs = require('fs');
+    const path = require('path');
+    const filePath = path.join('//pinbaf01.pwintl.us/IEC/Data_Analytics_Methods/WebDevelopment/Tool&Software', 'data.json');
+
+    function displayAll() {
+      if (document.querySelector('select').value === '') {
+        let teams = document.querySelectorAll(".team-item");
+        teams.forEach(item => item.click());
+      }
+    }
+
+    function display() {
+      let allTeamItems = document.querySelectorAll(".team-item");
+      let allToolItems = document.querySelectorAll(".tool-item");
+      if (document.querySelector('select').value === 'all') {
+        allToolItems.forEach(item => item.style.display = "block");
+        allTeamItems.forEach(item => item.style.display = "block");
+        if (allToolItems.length === 0) {
+          allTeamItems.forEach(item => item.click());
+        }
+        else {
+          allTeamItems.forEach(item => item.style.display = "block");
+        }
+      }
+      else if (document.querySelector('select').value === 'tools') {
+        if (allToolItems.length === 0) {
+          allTeamItems.forEach(item => item.click());
+        }
+        else {
+          allTeamItems.forEach(item => item.style.display = "block");
+        }
+        allTeamItems.forEach(item => item.style.display = "none");
+        allToolItems.forEach(item => item.style.display = "block");
+      }
+      else if (document.querySelector('select').value === 'domains') {
+        allTeamItems.forEach(item => item.style.display = "block");
+        allToolItems.forEach(item => item.style.display = "none");
+      }
+    }
+
+    async function fetchTeamsData() {
+      try {
+        const response = await fetch(filePath);
+        const data = await response.json();
+        return data;
+      } catch (error) {
+        console.error('Error fetching teams data:', error);
+        return [];
+      }
+    }
+
+    async function displayTeams() {
+      const teamsData = await fetchTeamsData(); // gettting data from json file
+
+      let teamList = document.getElementById("team-list").getElementsByTagName("ul")[0]; // getting ul element
+      let teamItems = teamList.getElementsByClassName("team-item"); // getting all team items
+
+      teamsData.forEach(team => {
+        let teamItem = document.createElement("li");
+        teamItem.classList.add("team-item");
+        teamItem.textContent = team.name;
+        let toggleIcon = document.createElement("span");
+        toggleIcon.classList.add("toggle-icon");
+        toggleIcon.textContent = "⏷";
+        teamItem.appendChild(toggleIcon);
+
+        teamItem.onclick = () => handleTeamSelection(team);
+        teamList.appendChild(teamItem);
+      });
+    }
+
+    function displayTools(team) {
+      let softwareToolsList = document.createElement("ul");
+      softwareToolsList.classList.add("software-tools-list");
+      team.softwareTools.forEach(tool => {
+        let toolItem = document.createElement("li");
+        toolItem.classList.add("tool-item");
+        toolItem.textContent = tool.name;
+        toolItem.onclick = () => {
+          if (toolItem.classList.contains("selected")) {
+            toolItem.classList.remove("selected");
+            document.getElementById("tool-details").innerHTML = "";
+          } else {
+            let selectedToolItem = softwareToolsList.querySelector('.selected');
+            if (selectedToolItem) {
+              selectedToolItem.classList.remove("selected");
+            }
+            toolItem.classList.add("selected");
+            document.getElementById("tool-details").innerHTML = "";
+            displayToolDetails(tool);
+          }
+        }
+        softwareToolsList.appendChild(toolItem);
+      });
+
+      let teamList = document.getElementById("team-list").getElementsByTagName("ul")[0];
+      let selectedTeamItem = teamList.querySelector('.selected');
+
+      let nextSibling = selectedTeamItem.nextSibling;
+
+      if (nextSibling && nextSibling.classList.contains('software-tools-list')) {
+        selectedTeamItem.parentNode.removeChild(nextSibling);
+      } else {
+        teamList.insertBefore(softwareToolsList, selectedTeamItem.nextSibling);
+      }
+    };
+
+    function displayToolDetails(tool) {
+      let toolDetails = document.getElementById("tool-details");
+      let toolFields = tool.fields;
+      Object.keys(toolFields).forEach(fieldName => {
+        let fieldItem = document.createElement("div");
+        fieldItem.classList.add("field-item");
+        if (toolFields[fieldName]) {
+          fieldItem.innerHTML = `<strong>${fieldName}:</strong> ${toolFields[fieldName]}`;
+        }
+        toolDetails.appendChild(fieldItem);
+      });
+      toolDetails.style.backgroundColor = '#0f4567bd';
+
+      toolDetails.style.boxShadow = '0 0 10px 0 #000';
+    }
+
+    function handleTeamSelection(team) {
+      let allTeamItems = document.querySelectorAll(".team-item");
+      allTeamItems.forEach(item => item.classList.remove("selected"));
+      let clickedTeamItem = event.target;
+      clickedTeamItem.classList.add("selected");
+      let toggleIcon = clickedTeamItem.getElementsByClassName("toggle-icon")[0];
+      if (toggleIcon.textContent === "⏷") {
+        toggleIcon.textContent = '⏶';
+        clickedTeamItem.style.backgroundColor = "#4a8cf08e";
+      } else {
+        toggleIcon.textContent = "⏷";
+        clickedTeamItem.style.backgroundColor = "#f0f0f0";
+      }
+      displayTools(team);
+    }
+
+    function search() {
+      // read json file and match search query with "softwareTools" name
+      let searchQuery = document.getElementById("search").value;
+      let teamList = document.getElementById("team-list").getElementsByTagName("ul")[0];
+      let softwareToolsList = teamList.getElementsByClassName("software-tools-list");
+      let toolItems = teamList.getElementsByClassName("tool-item");
+
+      if (document.querySelector('select').value === 'domains') {
+        // only show those team-items that match the search query
+        let teamItems = teamList.getElementsByClassName("team-item");
+        for (let i = 0; i < teamItems.length; i++) {
+          let teamName = teamItems[i].textContent;
+          if (teamName.toLowerCase().includes(searchQuery.toLowerCase())) {
+            teamItems[i].style.display = "block";
+          } else {
+            teamItems[i].style.display = "none";
+          }
+        }
+      }
+      else {
+        for (let i = 0; i < toolItems.length; i++) {
+          let toolName = toolItems[i].textContent;
+          if (toolName.toLowerCase().includes(searchQuery.toLowerCase())) {
+            toolItems[i].style.display = "block";
+          } else {
+            toolItems[i].style.display = "none";
+          }
+
+        }
+      }
+    }
+
+    displayTeams();
+
+
+  </script>
+</body>
+
+</html>
