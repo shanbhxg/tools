@@ -1,0 +1,5 @@
+owner: shanbhxg
+repo: tools
+provider: github
+releaseType: draft
+updaterCacheDirName: tool-management-updater

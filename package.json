@@ -1,22 +1,44 @@
 {
-  "dependencies": {
-    
-  },
   "name": "tool-management",
   "version": "1.0.0",
   "description": "Tool_Management",
   "main": "index.js",
+  "icon": "assets/img/pw.jpg",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
     "dev:watch": "npx electronmon --trace-warnings .",
-    "build":"electron-builder"
+    "build": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "electron": "^6.1.2",
     "electron-builder": "^24.13.3"
-    
+  },
+  "build": {
+    "appId": "com.example.tool-management",
+    "productName": "Tool Management",
+    "directories": {
+      "output": "dist"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "shanbhxg",
+        "repo": "tools",
+        "releaseType": "draft"
+      }
+    ],
+    "mac": {
+      "target": "dmg"
+    },
+    "win": {
+      "target": "nsis"
+    }
+  },
+  "dependencies": {
+    "electron-updater": "^6.1.8"
   }
 }
