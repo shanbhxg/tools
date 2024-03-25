@@ -17,7 +17,10 @@
     "electron": "^6.1.2",
     "electron-builder": "^24.13.3"
   },
-  "repository": {"https://github.com/shanbhxg/updates/"},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shanbhxg/tools"
+  },
   "publish": {
     "provider": "github",
     "releaseType": "release"
