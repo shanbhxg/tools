@@ -18,24 +18,13 @@
     "electron-builder": "^24.13.3"
   },
   "build": {
-    "appId": "com.example.tool-management",
+    "appId": "com.pratt.tool-management",
     "productName": "Tool Management",
-    "directories": {
-      "output": "dist"
-    },
-    "publish": [
-      {
-        "provider": "github",
-        "owner": "shanbhxg",
-        "repo": "tools",
-        "releaseType": "draft"
-      }
-    ],
-    "mac": {
-      "target": "dmg"
-    },
     "win": {
       "target": "nsis"
+    },
+    "directories": {
+      "output": "dist"
     }
   },
   "dependencies": {
