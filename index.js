@@ -54,6 +54,7 @@ autoUpdater.on('checking-for-update', () => {
   });
 
 app.whenReady().then(() => {
-    createMainWindow();
+    
     autoUpdater.checkForUpdatesAndNotify();
+    createMainWindow();
 });
