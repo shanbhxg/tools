@@ -1,4 +1,7 @@
 const { app, BrowserWindow } = require('electron');
+const { autoUpdater } = require('electron-updater');
+const { dialog } = require('electron');
+
 const url = require('url');
 const path = require('path');
 
@@ -15,7 +18,6 @@ function createMainWindow() {
         nodeIntegration: true,
         contextIsolation: false
         }
-
     });
 
     mainWindow.loadFile('./login.html');
@@ -28,6 +30,9 @@ app.whenReady().then(() => {
         if (BrowserWindow.getAllWindows().length === 0) {
             createMainWindow();
         }
+        
+    
+    console.log('This application is version:', app.getVersion());
     });
 
     autoUpdater.checkForUpdates();
