@@ -1,34 +1,20 @@
 {
   "name": "tool-management",
-  "version": "1.0.1",
-  "description": "Tool_Management",
+  "version": "1.0.2",
   "main": "index.js",
-  "icon": "assets/img/pw.jpg",
+  "description": "tool management",
+  "author": "Deepti",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron .",
-    "dev:watch": "npx electronmon --trace-warnings .",
-    "build": "electron-builder -p always",
-    "release": "set NODE_TLS_REJECT_UNAUTHORIZED=0 && electron-builder --publish always",
-    "postinstall": "electron-builder install-app-deps"
+    "publish": "electron-builder -p always"
   },
-  
-  "config": {
-    "strict-ssl": false
-  },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "electron": "^6.1.2",
-    "electron-builder": "^24.13.3"
+    "electron-builder": "^24.13.3",
+    "electron-notarize": "^1.1.1"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/shanbhxg/tools"
-  },
-  "publish": {
-    "provider": "github",
-    "releaseType": "release"
+  "dependencies": {
+    "electron-log": "^4.4.1",
+    "electron-updater": "^4.3.9"
   },
   "build": {
     "appId": "com.pratt.tool-management",
@@ -38,9 +24,9 @@
     },
     "directories": {
       "output": "dist"
+    },
+    "nsis": {
+      "oneClick": false
     }
-  },
-  "dependencies": {
-    "electron-updater": "^6.1.8"
   }
 }
