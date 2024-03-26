@@ -4,7 +4,7 @@
     "electron-updater": "^6.1.8"
   },
   "name": "tool-management",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Tool_Management",
   "main": "index.js",
   "scripts": {
