@@ -20,17 +20,12 @@ function createMainWindow() {
 
     mainWindow.loadFile('./login.html');
 }
+  
 
 app.whenReady().then(() => {
     createMainWindow();
 
-    app.on('activate', () => {
-        if (BrowserWindow.getAllWindows().length === 0) {
-            createMainWindow();
-        }
-    });
-
-    autoUpdater.checkForUpdates();
+   
 });
 
 

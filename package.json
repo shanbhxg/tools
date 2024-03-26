@@ -1,38 +1,22 @@
 {
+  "dependencies": {
+    
+  },
   "name": "tool-management",
   "version": "1.0.0",
   "description": "Tool_Management",
   "main": "index.js",
-  "icon": "assets/img/pw.jpg",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
     "dev:watch": "npx electronmon --trace-warnings .",
-    "build": "electron-builder",
-    "postinstall": "electron-builder install-app-deps"
+    "build":"electron-builder"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "electron": "^6.1.2",
     "electron-builder": "^24.13.3"
-  },
-  "repository": {"https://github.com/shanbhxg/updates/"},
-  "publish": {
-    "provider": "github",
-    "releaseType": "release"
-  },
-  "build": {
-    "appId": "com.pratt.tool-management",
-    "productName": "Tool Management",
-    "win": {
-      "target": "nsis"
-    },
-    "directories": {
-      "output": "dist"
-    }
-  },
-  "dependencies": {
-    "electron-updater": "^6.1.8"
+    
   }
 }
