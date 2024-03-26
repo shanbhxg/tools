@@ -1,20 +1,26 @@
 {
   "name": "tool-management",
-  "version": "1.0.2",
+  "version": "1.0.0",
+  "description": "Tool_Management",
   "main": "index.js",
-  "description": "tool management",
-  "author": "Deepti",
+  "icon": "assets/img/pw.jpg",
   "scripts": {
-    "publish": "electron-builder -p always"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "dev:watch": "npx electronmon --trace-warnings .",
+    "build": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
   },
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
     "electron": "^6.1.2",
-    "electron-builder": "^24.13.3",
-    "electron-notarize": "^1.1.1"
+    "electron-builder": "^24.13.3"
   },
-  "dependencies": {
-    "electron-log": "^4.4.1",
-    "electron-updater": "^4.3.9"
+  "repository": {"https://github.com/shanbhxg/updates/"},
+  "publish": {
+    "provider": "github",
+    "releaseType": "release"
   },
   "build": {
     "appId": "com.pratt.tool-management",
@@ -24,9 +30,9 @@
     },
     "directories": {
       "output": "dist"
-    },
-    "nsis": {
-      "oneClick": false
     }
+  },
+  "dependencies": {
+    "electron-updater": "^6.1.8"
   }
 }

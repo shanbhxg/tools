@@ -70,12 +70,9 @@
             </form>
         </div>
     </div>
-    Current version: <span id="version">vX.Y.Z</span>
-  <div id="messages"></div>
+
 </body>
 <script>
-    let version = window.location.hash.substring(1);
-    document.getElementById('version').innerText = version; 
     let credentials = [
         { username: "F337751", password: "F337751" },
         { username: "F337748", password: "F337748" },
@@ -140,13 +137,6 @@
         })*/
 
     }
-
-    const {ipcRenderer} = require('electron');
-    ipcRenderer.on('message', function(event, text) {
-    var container = document.getElementById('messages');
-    var message = document.createElement('div');
-    message.innerHTML = text;
-    container.appendChild(message); })
 
     function redirectFunction() {
         var username = document.getElementById('username').value;

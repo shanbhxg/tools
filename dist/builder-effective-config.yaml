@@ -1,11 +1,16 @@
 directories:
   output: dist
   buildResources: build
-appId: com.pratt.tool-management
+appId: com.example.tool-management
 productName: Tool Management
+publish:
+  - provider: github
+    owner: shanbhxg
+    repo: tools
+    releaseType: draft
+mac:
+  target: dmg
 win:
   target: nsis
-nsis:
-  oneClick: false
 files: []
 electronVersion: 6.1.2
