@@ -1,11 +1,18 @@
 const { app, BrowserWindow } = require('electron');
+const autoUpdater = require('electron-updater').autoUpdater;
+
 const url = require('url');
 const path = require('path');
 
+let win;
 
+function sendStatusToWindow(text) {
+    log.info(text);
+    win.webContents.send('message', text);
+  }
 
-function createMainWindow() {
-    const mainWindow = new BrowserWindow({
+  function createMainWindow() {
+    win = new BrowserWindow({
         title: 'My Tool App',
         height: 1000,
         width: 1000,
@@ -15,22 +22,63 @@ function createMainWindow() {
         nodeIntegration: true,
         contextIsolation: false
         }
-
     });
-
-    mainWindow.loadFile('./login.html');
+    win.webContents.openDevTools();
+    win.on('closed', () => {
+      win = null;
+    });
+    win.loadURL(`file://${__dirname}/login.html#v${app.getVersion()}`);
+    return win;
 }
   
+autoUpdater.on('checking-for-update', () => {
+    sendStatusToWindow('Checking for update...');
+  })
+  autoUpdater.on('update-available', (info) => {
+    sendStatusToWindow('Update available.');
+  })
+  autoUpdater.on('update-not-available', (info) => {
+    sendStatusToWindow('Update not available.');
+  })
+  autoUpdater.on('error', (err) => {
+    sendStatusToWindow('Error in auto-updater. ' + err);
+  })
+  autoUpdater.on('download-progress', (progressObj) => {
+    let log_message = "Download speed: " + progressObj.bytesPerSecond;
+    log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
+    log_message = log_message + ' (' + progressObj.transferred + "/" + progressObj.total + ')';
+    sendStatusToWindow(log_message);
+  })
+  autoUpdater.on('update-downloaded', (info) => {
+    sendStatusToWindow('Update downloaded');
+  });
 
 app.whenReady().then(() => {
     createMainWindow();
 
-   
 });
 
+let template = []
+if (process.platform === 'darwin') {
+  // OS X
+  const name = app.getName();
+  template.unshift({
+    label: name,
+    submenu: [
+      {
+        label: 'About ' + name,
+        role: 'about'
+      },
+      {
+        label: 'Quit',
+        accelerator: 'Ctrl+Q',
+        click() { app.quit(); }
+      },
+    ]
+  })
+}
 
-app.on('window-all-closed', () => {
-    if (process.platform !== 'win32') {
-        app.quit();
-    }
-})
+app.on('ready', function() {
+  createMainWindow();
+  autoUpdater.checkForUpdatesAndNotify();
+});
