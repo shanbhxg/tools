@@ -1,6 +1,6 @@
 {
   "name": "tool-management",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tool_Management",
   "main": "index.js",
   "icon": "assets/img/pw.jpg",
@@ -9,6 +9,7 @@
     "start": "electron .",
     "dev:watch": "npx electronmon --trace-warnings .",
     "build": "electron-builder",
+    "release": "electron-builder --publish always GH_TOKEN=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",
     "postinstall": "electron-builder install-app-deps"
   },
   "author": "",

@@ -1,15 +1,8 @@
 directories:
   output: dist
   buildResources: build
-appId: com.example.tool-management
+appId: com.pratt.tool-management
 productName: Tool Management
-publish:
-  - provider: github
-    owner: shanbhxg
-    repo: tools
-    releaseType: draft
-mac:
-  target: dmg
 win:
   target: nsis
 files: []
