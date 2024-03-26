@@ -58,26 +58,6 @@ app.whenReady().then(() => {
 
 });
 
-let template = []
-if (process.platform === 'darwin') {
-  // OS X
-  const name = app.getName();
-  template.unshift({
-    label: name,
-    submenu: [
-      {
-        label: 'About ' + name,
-        role: 'about'
-      },
-      {
-        label: 'Quit',
-        accelerator: 'Ctrl+Q',
-        click() { app.quit(); }
-      },
-    ]
-  })
-}
-
 app.on('ready', function() {
   createMainWindow();
   autoUpdater.checkForUpdatesAndNotify();
