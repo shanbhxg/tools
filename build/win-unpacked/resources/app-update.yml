@@ -2,5 +2,5 @@ owner: shanbhxg
 repo: tools
 provider: github
 releaseType: draft
-token: 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
+token: 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
 updaterCacheDirName: tool-management-updater

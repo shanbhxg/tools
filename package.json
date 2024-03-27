@@ -1,6 +1,6 @@
 {
   "name": "tool-management",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -42,7 +42,7 @@
         "owner": "shanbhxg",
         "repo": "tools",
         "releaseType": "draft",
-        "token":"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"
+        "token":"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"
       }
     ]
   },
