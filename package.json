@@ -1,22 +1,40 @@
 {
-  "dependencies": {
-    "electron-log": "^5.1.2",
-    "electron-updater": "^6.1.8"
-  },
   "name": "tool-management",
-  "version": "1.1.2",
-  "description": "Tool_Management",
+  "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
-    "dev:watch": "npx electronmon --trace-warnings .",
     "build": "electron-builder"
   },
-  "author": "",
+  "author": "PW",
   "license": "ISC",
+  "dependencies": {
+    "electron-updater": "^6.1.8",
+    "react": "^18.2.0"
+  },
   "devDependencies": {
     "electron": "^6.1.2",
-    "electron-builder": "^24.13.3"
-  }
+    "electron-builder": "^22.12.1"
+  },
+  "build": {
+    "appId": "com.pratt.tools",
+    "productName": "PWTools",
+    "directories": {
+      "output": "build"
+    },
+    "files": [
+
+    ],
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "shanbhxg",
+        "repo": "todo",
+        "releaseType": "draft",
+        "token":""
+      }
+    ]
+  },
+  "description": ""
 }
