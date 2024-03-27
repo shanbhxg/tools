@@ -20,6 +20,6 @@ publish:
   - provider: github
     owner: shanbhxg
     repo: tools
-    releaseType: draft
+    releaseType: release
     token: <stripped sensitive data>
 electronVersion: 6.1.2

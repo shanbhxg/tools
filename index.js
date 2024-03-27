@@ -1,6 +1,6 @@
 const { app, BrowserWindow, dialog } = require('electron');
 const { autoUpdater } = require('electron-updater');
-const axios = require('axios');
+var axios = require('axios');
 const url = require('url');
 const path = require('path');
 

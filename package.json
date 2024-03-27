@@ -1,6 +1,6 @@
 {
   "name": "tool-management",
-  "version": "1.0.5",
+  "version": "1.1.1",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,7 +10,7 @@
   "author": "PW",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.6.8",
+    "axios": "^0.21.4",
     "electron-updater": "^6.1.8",
     "react": "^18.2.0"
   },
@@ -42,7 +42,7 @@
         "provider": "github",
         "owner": "shanbhxg",
         "repo": "tools",
-        "releaseType": "draft",
+        "releaseType": "release",
         "token": "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"
       }
     ]

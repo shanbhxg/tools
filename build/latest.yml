@@ -1,8 +1,8 @@
-version: 1.0.5
+version: 1.1.1
 files:
-  - url: PWTools-Setup-1.0.5.exe
-    sha512: ncQpvQEjC2koLgz0CjPvBhysXMRKwai1PwwPngWlDEkCj/D+LXw3EFvpuCsYUdit2iA29WZPN9KOadWsm3QGCQ==
-    size: 47452512
-path: PWTools-Setup-1.0.5.exe
-sha512: ncQpvQEjC2koLgz0CjPvBhysXMRKwai1PwwPngWlDEkCj/D+LXw3EFvpuCsYUdit2iA29WZPN9KOadWsm3QGCQ==
-releaseDate: '2024-03-27T09:10:58.155Z'
+  - url: PWTools-Setup-1.1.1.exe
+    sha512: nnBwjI3xjvaKdYeAlh7ymbpQ0Q0QLhXEwRwRUkNSLhZFTuI1P7QMAZFhR/cs8zEugX3DuNOm1AmwzjUz9hy3/Q==
+    size: 47502686
+path: PWTools-Setup-1.1.1.exe
+sha512: nnBwjI3xjvaKdYeAlh7ymbpQ0Q0QLhXEwRwRUkNSLhZFTuI1P7QMAZFhR/cs8zEugX3DuNOm1AmwzjUz9hy3/Q==
+releaseDate: '2024-03-27T09:50:31.743Z'
