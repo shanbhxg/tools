@@ -25,10 +25,8 @@ function createMainWindow() {
 app.whenReady().then(() => {
     createMainWindow();
 
-    // Check for updates
     checkForUpdates();
 
-    // Listen for update downloaded
     autoUpdater.on('update-downloaded', () => {
         dialog.showMessageBox(mainWindow, {
             type: 'info',
@@ -43,7 +41,6 @@ app.whenReady().then(() => {
         });
     });
 
-    // Listen for update error
     autoUpdater.on('error', (error) => {
         console.error('Update error:', error.message);
     });
