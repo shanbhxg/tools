@@ -24,7 +24,15 @@
       "output": "build"
     },
     "files": [
-
+      "Styles/**/*",
+      "view.html",
+      "home.html",
+      "login.html",
+      "newuser.html",
+      "form.html",
+      "index.html",
+      "main.js",
+      "package.json"
     ],
     "publish": [
       {
