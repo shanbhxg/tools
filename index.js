@@ -1,5 +1,6 @@
 const { app, BrowserWindow, dialog } = require('electron');
 const { autoUpdater } = require('electron-updater');
+const axios = require('axios');
 const url = require('url');
 const path = require('path');
 
@@ -24,38 +25,25 @@ function createMainWindow() {
 app.whenReady().then(() => {
     createMainWindow();
 
-    autoUpdater.checkForUpdatesAndNotify();
+    // Check for updates
+    checkForUpdates();
 
-    autoUpdater.on('update-available', () => {
-        dialog.showMessageBox(mainWindow, {
-            type: 'info',
-            message: 'A new version of the application is available. Do you want to update now?',
-            buttons: ['Yes', 'No']
-        }).then((response) => {
-            if (response.response === 0) { // User selected "Yes"
-                autoUpdater.downloadUpdate();
-            }
-        }).catch((error) => {
-            console.error('Update available dialog error:', error);
-        });
-    });
-
+    // Listen for update downloaded
     autoUpdater.on('update-downloaded', () => {
         dialog.showMessageBox(mainWindow, {
             type: 'info',
-            message: 'Update downloaded. It will be installed in 5 seconds. Do you want to restart now?',
+            message: 'Update downloaded. It will be installed on next app restart. Do you want to restart now?',
             buttons: ['Yes', 'No']
         }).then((response) => {
             if (response.response === 0) { // User selected "Yes"
-                setTimeout(() => {
-                    autoUpdater.quitAndInstall();
-                }, 5000); // 5000 milliseconds delay (5 seconds)
+                autoUpdater.quitAndInstall();
             }
         }).catch((error) => {
             console.error('Update downloaded dialog error:', error);
         });
     });
 
+    // Listen for update error
     autoUpdater.on('error', (error) => {
         console.error('Update error:', error.message);
     });
@@ -66,3 +54,25 @@ app.on('window-all-closed', () => {
         app.quit();
     }
 });
+
+async function checkForUpdates() {
+    try {
+        const { data: releases } = await axios.get('https://api.github.com/repos/your-github-username/your-repo-name/releases/latest');
+        const latestVersion = releases.tag_name.replace('v', '');
+        const currentVersion = app.getVersion();
+
+        if (latestVersion !== currentVersion) {
+            dialog.showMessageBox(mainWindow, {
+                type: 'info',
+                message: `A new version (${latestVersion}) of the application is available. Do you want to update now?`,
+                buttons: ['Yes', 'No']
+            }).then((response) => {
+                if (response.response === 0) { // User selected "Yes"
+                    autoUpdater.checkForUpdatesAndNotify();
+                }
+            });
+        }
+    } catch (error) {
+        console.error('Error checking for updates:', error);
+    }
+}
