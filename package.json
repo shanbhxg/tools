@@ -10,6 +10,7 @@
   "author": "PW",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.6.8",
     "electron-updater": "^6.1.8",
     "react": "^18.2.0"
   },
@@ -42,7 +43,7 @@
         "owner": "shanbhxg",
         "repo": "tools",
         "releaseType": "draft",
-        "token":"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"
+        "token": "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"
       }
     ]
   },

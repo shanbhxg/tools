@@ -57,7 +57,7 @@ app.on('window-all-closed', () => {
 
 async function checkForUpdates() {
     try {
-        const { data: releases } = await axios.get('https://api.github.com/repos/your-github-username/your-repo-name/releases/latest');
+        const { data: releases } = await axios.get('https://api.github.com/repos/shanbhxg/tools/releases/latest');
         const latestVersion = releases.tag_name.replace('v', '');
         const currentVersion = app.getVersion();
 
