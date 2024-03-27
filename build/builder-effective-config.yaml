@@ -1,0 +1,25 @@
+directories:
+  output: build
+  buildResources: build
+appId: com.pratt.tools
+productName: PWTools
+files:
+  - filter:
+      - Styles/**/*
+      - assets/**/*
+      - view.html
+      - home.html
+      - login.html
+      - newuser.html
+      - form.html
+      - index.html
+      - main.js
+      - index.js
+      - package.json
+publish:
+  - provider: github
+    owner: shanbhxg
+    repo: tools
+    releaseType: draft
+    token: <stripped sensitive data>
+electronVersion: 6.1.2

@@ -25,6 +25,7 @@
     },
     "files": [
       "Styles/**/*",
+      "assets/**/*",
       "view.html",
       "home.html",
       "login.html",
@@ -32,15 +33,16 @@
       "form.html",
       "index.html",
       "main.js",
+      "index.js",
       "package.json"
     ],
     "publish": [
       {
         "provider": "github",
         "owner": "shanbhxg",
-        "repo": "todo",
+        "repo": "tools",
         "releaseType": "draft",
-        "token":""
+        "token":"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"
       }
     ]
   },

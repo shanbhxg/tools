@@ -1,42 +1,61 @@
-const { app, BrowserWindow } = require('electron');
-const autoUpdater = require('electron-updater').autoUpdater;
-
+const { app, BrowserWindow, dialog } = require('electron');
+const { autoUpdater } = require('electron-updater');
 const url = require('url');
 const path = require('path');
 
-let win;
+let mainWindow;
 
-function sendStatusToWindow(text) {
-    console.log(text);
-    win.webContents.send('message', text);
-  }
-
-  function createMainWindow() {
-    win = new BrowserWindow({
+function createMainWindow() {
+    mainWindow = new BrowserWindow({
         title: 'My Tool App',
         height: 1000,
         width: 1000,
         nodeIntegration: true,
         contextIsolation: false,
         webPreferences: {
-        nodeIntegration: true,
-        contextIsolation: false
+            nodeIntegration: true,
+            contextIsolation: false
         }
     });
-    win.webContents.openDevTools();
-    win.on('closed', () => {
-      win = null;
-    });
-    win.loadURL(`file://${__dirname}/login.html#v${app.getVersion()}`);
-    return win;
+
+    mainWindow.loadFile('./login.html');
 }
-  
-autoUpdater.on('checking-for-update', () => {
-    sendStatusToWindow('Checking for update...');
-  })
 
 app.whenReady().then(() => {
-    
-    autoUpdater.checkForUpdatesAndNotify();
     createMainWindow();
+
+    // Check for updates
+    autoUpdater.checkForUpdatesAndNotify();
+
+    // Listen for update available
+    autoUpdater.on('update-available', () => {
+        dialog.showMessageBox(mainWindow, {
+            type: 'info',
+            message: 'A new version of the application is available. Do you want to update now?',
+            buttons: ['Yes', 'No']
+        }).then((response) => {
+            if (response.response === 0) {
+                autoUpdater.downloadUpdate();
+            }
+        });
+    });
+
+    // Listen for update downloaded
+    autoUpdater.on('update-downloaded', () => {
+        dialog.showMessageBox(mainWindow, {
+            type: 'info',
+            message: 'Update downloaded. It will be installed on next app restart. Do you want to restart now?',
+            buttons: ['Yes', 'No']
+        }).then((response) => {
+            if (response.response === 0) {
+                autoUpdater.quitAndInstall();
+            }
+        });
+    });
+});
+
+app.on('window-all-closed', () => {
+    if (process.platform !== 'win32') {
+        app.quit();
+    }
 });
