@@ -1,0 +1,6 @@
+owner: shanbhxg
+repo: tools
+provider: github
+releaseType: release
+token: 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
+updaterCacheDirName: tool-management-updater

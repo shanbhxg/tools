@@ -1,6 +1,6 @@
 const { app, BrowserWindow, dialog } = require('electron');
 const { autoUpdater } = require('electron-updater');
-var axios = require('axios');
+const axios = require('axios');
 const url = require('url');
 const path = require('path');
 
@@ -24,7 +24,6 @@ function createMainWindow() {
 
 app.whenReady().then(() => {
     createMainWindow();
-
     checkForUpdates();
 
     autoUpdater.on('update-downloaded', () => {
@@ -41,6 +40,7 @@ app.whenReady().then(() => {
         });
     });
 
+    // Listen for update error
     autoUpdater.on('error', (error) => {
         console.error('Update error:', error.message);
     });

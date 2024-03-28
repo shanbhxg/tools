@@ -1,7 +1,8 @@
 {
   "name": "tool-management",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
@@ -43,7 +44,7 @@
         "owner": "shanbhxg",
         "repo": "tools",
         "releaseType": "release",
-        "token": "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"
+        "token": "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"
       }
     ]
   },
